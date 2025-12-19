@@ -1,5 +1,8 @@
 # SWOT_Coasts
 
+## Several workflows to extract SWOT data for evaluation against in-situ data in coastal areas
+
+
 Requirements:
 ```
 conda env create -f requirements.yml
