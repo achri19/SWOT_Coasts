@@ -10,6 +10,6 @@ conda env create -f requirements.yml
    ```
 
 # Find track/frame information for a set of Lat/Lon coordinates
-'''
-python SWOT_get-pass-scene-tile.py
-'''
+   ```
+   python SWOT_get-pass-scene-tile.py
+   ```
