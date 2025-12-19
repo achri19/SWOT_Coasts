@@ -150,29 +150,31 @@ Path(orbit_path).mkdir(parents=True, exist_ok=True)
 
 
 ## Get Pass, Scene, and Tile for the examples_template.csv
-bounding_LUT = pd.read_csv(base_dir / 'examples_template.csv')
-aois = list(bounding_LUT['aoi'])
-aoi = input('which AOI (if none, you need bounding box): %s '%(aois))
-LUT =  bounding_LUT[bounding_LUT['aoi']==aoi].iloc[[0]]
+aoi_template = pd.read_csv(base_dir / 'aoi_template.csv')
+aois = list(aoi_template['aoi'])
+aoi = input('\nwhich AOI (if none, you need bounding box): %s '%(aois))
+LUT =  aoi_template[aoi_template['aoi']==aoi].iloc[[0]]
 if pd.isna(LUT['pass']).all() | pd.isna(LUT['scene']).all() | pd.isna(LUT['tile']).all():
-    print('Determine Pass, Scene, and Tile for %s' %(aoi))
+    print('\nDetermine Pass, Scene, and Tile for %s' %(aoi))
     points = gpd.GeoDataFrame({'aoi':LUT['aoi'],'geometry': box(minx=LUT["minx"], miny=LUT["miny"], maxx=LUT["maxx"], maxy=LUT["maxy"])}, crs="EPSG:4326")
     calval = scan_calval(points,'aoi')
     science = scan_science(points,'aoi')
     final = compile_all(calval,science,LUT,'aoi')
-    bounding_LUT.loc[bounding_LUT['aoi'] == aoi] = final
+    aoi_template.loc[aoi_template['aoi'] == aoi] = final
+    aoi_template.to_csv(base_dir / 'aoi_template.csv')
+else:
+    print('\n%s Pass, Scene, Tile already determined - check aoi_template.csv' %(aoi))
     
-print('Provide a CSV with either a list of points (name, latitude, longitude) or a list of aois with columns aoi, minx, miny, maxx, maxy')
-print('Coordinates must be in WGS84 (EPSG 4326)')
-input_file = Path(str(input('Path to CSV file: \n')))
-csv = pd.read_csv(input_file)
-print(csv.head())
-points = gpd.GeoDataFrame({'name':csv['name'],'geometry': gpd.points_from_xy(csv['longitude'], csv['latitude'])}, crs="EPSG:4326")
-calval = scan_calval(points,'name')
-science = scan_science(points,'name')
-csv = compile_all(calval,science,LUT,'name')
-csv.to_csv(str(input_file).replace('.csv','_SWOTacquisitions.csv'))
+point_template = pd.read_csv(base_dir / 'point_template.csv')
+if pd.isna(point_template['pass']).all() | pd.isna(point_template['scene']).all() | pd.isna(point_template['tile']).all():
+    print('\n\nDetermine Pass, Scene, and Tile for %s' %(point_template['name'].values))
+    points = gpd.GeoDataFrame({'name':point_template['name'],'geometry': gpd.points_from_xy(point_template['longitude'], point_template['latitude'])}, crs="EPSG:4326")
+    calval = scan_calval(points,'name')
+    science = scan_science(points,'name')
+    point_template = compile_all(calval,science,LUT,'name')
+    point_template.to_csv(str(base_dir / 'point_template.csv'))
 
-
+else:
+    print('\n\nAll points Pass, Scene, Tile already determined - check point_template.csv')
 
 
