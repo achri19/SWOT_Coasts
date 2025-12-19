@@ -51,15 +51,15 @@ if len(sys.argv) < 2:
 ##############################################################################
 ##############################################################################
 ## Set Directory
-# base_dir = Path(os.path.realpath(__file__)).parent.parent.parent
-base_dir = Path(os.path.dirname(os.getcwd())).parent
-
+base_dir = Path(os.path.realpath(__file__)).parent.parent
+# base_dir = Path(os.path.dirname(os.getcwd())).parent
+print(base_dir)
 
 ##############################################################################
 ##############################################################################
 ## Get bounding information from CSV. If you don't have this file or you're working on a new AOI, you can define boundaries below
 try:
-    bounding_LUT = pd.read_csv(base_dir / 'config'/ 'aoi_SWOT_all.csv')
+    bounding_LUT = pd.read_csv(base_dir / 'aoi_template.csv')
     aois = list(bounding_LUT['aoi'])
 except:
     bounding_LUT = pd.DataFrame([['default',np.nan,np.nan,np.nan,np.nan,10,15,-2,2,0,1]],columns=['aoi','minx','miny','maxx','maxy','minssh','maxssh','minwse','maxwse','mindac','maxdac'])
@@ -142,30 +142,23 @@ variables_to_savel3 = list(ds.columns)
 
 
 
-##### Get Gauge data
-gauge_folder = base_dir / "Validation" / 'gauges' / aoi #'stlawrence'
-if aoi == 'louisiana':
-    gauge_folder = '/projects/loac_hydro/alchrist/CRMS/'
-if types == 'profiles':
-    coords = pd.read_csv(base_dir / "Validation" / 'gauges' / 'profiles_SWOT_all.csv')
-if types == 'points':
-    coords = pd.read_csv(base_dir / "Validation" / 'gauges' / 'gauges_SWOT_all.csv')
-coords = coords[coords['aoi']==aoi].reset_index()
-passes = [ast.literal_eval(i) for i in coords['pass']]
-scenes = [ast.literal_eval(i) for i in coords['scene']]
-tiles = [ast.literal_eval(i) for i in coords['tile']]
-allpasses = [x for xs in passes for x in xs]
-allpasses = np.unique(allpasses)
-alltiles = [x for xs in tiles for x in xs]
-alltiles = np.unique(alltiles)
+##### Get Point Information
+output_dir = base_dir / 'Examples' / aoi
+Path(output_dir).mkdir(parents=True, exist_ok=True)
 
-g_names = coords['gaugename']
+coords = pd.read_csv(base_dir / 'points_template.csv')
+coords = coords[coords['aoi']==aoi].reset_index()
+try: 
+    passes = [ast.literal_eval(i) for i in coords['pass']]
+    scenes = [ast.literal_eval(i) for i in coords['scene']]
+    tiles = [ast.literal_eval(i) for i in coords['tile']]
+except:
+    print('points_template.csv does not contain pass, scene, and tile information. Go back and run SWOT_get_pass-scene-tile.py')
+
+g_names = coords['name']
 gs = np.arange(0,len(g_names))
 g_lons = coords['longitude'].astype(float)
 g_lats = coords['latitude'].astype(float)
-g_firstdates = coords['firstdate']
-g_lastdates = coords['lastdate']
-g_files = coords['filename']
 
 
 
@@ -197,9 +190,9 @@ swot_products = ['SWOT_L2_LR_SSH_Expert','SWOT_L2_LR_SSH_Unsmoothed','SWOT_L3_LR
 for g in gs:
     ## Gauge Name
     gauge_name = g_names[g]
-    print('\n\n\n\n[%s-%s]: %s' %(gauge_name,g, g_files[g]))
+    print('\n\n\n\n[%s-%s]' %(gauge_name,g))
     
-    gauge_info = coords[coords['gaugename']==gauge_name].reset_index()
+    gauge_info = coords[coords['name']==gauge_name].reset_index()
 
     ## Gauge Coordinates
     g_lon = g_lons[g]
@@ -207,12 +200,14 @@ for g in gs:
     if g_lon > 180:
         g_lon = g_lon - 360
     print('Lat: %s Lon: %s' %(g_lat,g_lon))
-    g_wl = coords['wl_var'][g]
-    g_date = coords['date_var'][g]
     
     ## Determine which passes cover the gauge
-    gauge_passes = ast.literal_eval(gauge_info['pass'][0])
-    print(gauge_passes)   
+    try: 
+        passes = ast.literal_eval(gauge_info['pass'][0])
+    except:
+        print('points_template.csv does not contain pass, scene, and tile information. Go back and run SWOT_get_pass-scene-tile.py')
+        break
+    print(passes)   
    
     for product in swot_products[:]:
         
@@ -225,14 +220,14 @@ for g in gs:
             processing = l3version
             variables_to_save = [x for x in variables_to_savel3 if x not in variables_to_remove]
         
-        output1 = gauge_folder / ('%s_%s_%s_%skm_%s_%s.geojson' %(aoi,product,processing,search_radius,gauge_name,types))
+        output1 = output_dir / ('%s_%s_%s_%skm_%s_%s.geojson' %(aoi,product,processing,search_radius,gauge_name,types))
         print('[%s] Output=' % product,output1)
         if (os.path.isfile(output1)==False) :
             save_swot_df = {k: [] for k in variables_to_save + (['dist','unipix','avgtime','mode','cycle','pass','file','avgtimestr','gauge'])}
                 
-            for passs in gauge_passes[:]:
+            for passs in passes[:]:
                 matching_passes = glob.glob(str(base_dir / 'Data' / '*' / 'final'/('%s_*_%s_*_%s_lat%s-%s_%s.geojson' %(product,passs,processing,np.round(area2[1],1),np.round(area2[3],1),aoi))))
-                print('\n\n[%s %s]\tPass: %s = %s' %(product, gauge_name, passs,len(matching_passes)))           
+                print('[%s %s]\tPass: %s = %s' %(product, gauge_name, passs,len(matching_passes)))           
                 cycles = np.unique([matching_passes[i].split('/')[-1].split('_')[5] for i in range(len(matching_passes))])
                 cycles.sort()
                 for cycle in cycles:
@@ -330,18 +325,21 @@ for g in gs:
                 bad_cycles = []
                 save_swot_gdf = save_swot_gdf[~save_swot_gdf['cycle'].isin(bad_cycles)]
                 
-                watermask = gpd.read_file(gauge_folder / ('%s_water_connected_10.shp' %(aoi))).to_crs('4326').explode()
-                test = []
-                test2 = []
-                for i in range(0,len(watermask)): 
-                    # save_swot_gdf = gpd.overlay(save_swot_gdf,watermask,how='intersection')
-                    test.append(save_swot_gdf.within(watermask.iloc[i].geometry).values)
-                for i in range(0,len(save_swot_gdf)):
-                    test3 = []
-                    for j in range(0,len(watermask)):
-                        test3.append(test[j][i])
-                    test2.append(any(test3))
-                save_swot_gdf[str(gauge_folder / ('%s_water_connected_10.shp' %(aoi)))] = test2
+                try:
+                    watermask = gpd.read_file(output_dir / ('%s_watermask.shp' %(aoi))).to_crs('4326').explode()
+                    test = []
+                    test2 = []
+                    for i in range(0,len(watermask)): 
+                        # save_swot_gdf = gpd.overlay(save_swot_gdf,watermask,how='intersection')
+                        test.append(save_swot_gdf.within(watermask.iloc[i].geometry).values)
+                    for i in range(0,len(save_swot_gdf)):
+                        test3 = []
+                        for j in range(0,len(watermask)):
+                            test3.append(test[j][i])
+                        test2.append(any(test3))
+                    save_swot_gdf[str(output_dir / ('%s_water_connected_10.shp' %(aoi)))] = test2
+                except:
+                    print('Water mask shapefile not available so water flag is not included. If you want to manually flag water pixels, provide a water mask file in the Examples/%s subfolder' %(aoi))
                 
                 avgtimes = pd.to_datetime(save_swot_gdf['avgtime'])#.dt.tz_localize('UTC')
                 save_swot_gdf['avgtime']=avgtimes
