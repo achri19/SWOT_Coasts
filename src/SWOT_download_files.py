@@ -25,7 +25,7 @@ import fnmatch
 base_dir = Path(os.path.dirname(os.getcwd()))
 
 
-bounding_LUT = pd.read_csv(base_dir / 'examples_template.csv')
+bounding_LUT = pd.read_csv(base_dir / 'aoi_template.csv')
 aois = list(bounding_LUT['aoi'])
 
 
