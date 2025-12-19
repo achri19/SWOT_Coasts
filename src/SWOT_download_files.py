@@ -22,7 +22,7 @@ import fnmatch
 ##############################################################################
 ##############################################################################
 ## Set Directory
-base_dir = Path(os.path.dirname(os.getcwd()))
+base_dir = Path(os.path.realpath(__file__)).parent.parent
 
 
 bounding_LUT = pd.read_csv(base_dir / 'aoi_template.csv')
@@ -108,7 +108,7 @@ if mode == 'LR':
     
 if len(results)>0:
     print('Number of Matching Results = ', len(results))
-    earthaccess.download(results[:], version_folder)
+    earthaccess.download(results[:], version_folder,show_progress=True)
     
     
 
