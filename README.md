@@ -1,8 +1,9 @@
 # SWOT_Coasts
 
 Requirements:
+```
 conda env create -f requirements.yml
-
+```
 
 # Download SWOT data (uses earthaccess)
    Answer prompts to determine which products to download and provide a bounding box.
