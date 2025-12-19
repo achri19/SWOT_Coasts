@@ -184,6 +184,7 @@ cython_debug/
 /orbit_files
 .DS_Store
 /Data
-point_template.csv
-aoi_template.csv
+/point_template.csv
+/aoi_template.csv
 /Examples
+point_template.csv
