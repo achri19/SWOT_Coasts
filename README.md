@@ -4,19 +4,26 @@
 
 
 # Requirements:
+## Python packages
 ```
 conda env create -f requirements.yml
+
+conda activate swot
 ```
 
+## Configuration file
+```
+examples_template.csv provides an example and will be read into the first two workflows below
+```
 # Workflows
 
-## Download SWOT data (uses earthaccess)
+## 1. Download SWOT data (uses earthaccess)
    Answer prompts to determine which products to download and provide a bounding box.
    ```
    python SWOT_download_files.py --interactive
    ```
 
-## Find track/frame information for a set of Lat/Lon coordinates
+## 2. Find track/frame information for a set of Lat/Lon coordinates
    - Determine the SWOT pass, scene, and tiles that overlap a given point or bounding box
    - Provide path to either: 
       - CSV with point coordinates with columns: name, latitude, and longitude 
