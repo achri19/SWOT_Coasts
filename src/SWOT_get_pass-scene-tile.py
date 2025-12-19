@@ -22,7 +22,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import subprocess 
 from shapely.geometry import box
-
+import ast
 
 
 def scan_calval(points,name_id):
@@ -72,7 +72,7 @@ def scan_calval(points,name_id):
         calval = pd.DataFrame({'pass':passes,'tiles':tiles,'scenes':scenes,'filename':names})
         return calval
     
-def scan_science(points,name_id):
+def scan_science(points,name_id,pass_estimate=None):
     ## Science 21-day Repeat SWOT Orbit
     file = orbit_path / 'swot_science_coverage_20240319.kmz'
     if os.path.isfile(file)==False:
@@ -91,23 +91,24 @@ def scan_science(points,name_id):
         names = []
         tiles = []
         for layer in fiona.listlayers(kml_path):
-            if layer[0]=='P':
-                print(layer)
-                polygon_gdf = gpd.read_file(kml_path, driver='KML', layer=layer)
-                points_within_polygons = gpd.sjoin(polygon_gdf,points , how='right', predicate='intersects')
-                points_within_polygons = points_within_polygons[~np.isnan(points_within_polygons['index_left'])]
-                if len(points_within_polygons)>0:
+            
+            if (pass_estimate is not None and layer in pass_estimate) | (pass_estimate is None and layer[0]=='P'):
                     print(layer)
-                    
-                    for i in range(0,len(points_within_polygons)):
-                        soup = BeautifulSoup(points_within_polygons.iloc[i]['description'], "html.parser")
-                        categories = soup('b', text=lambda text: text and text.endswith(":"))
-                        if len(categories)>0:
+                    polygon_gdf = gpd.read_file(kml_path, driver='KML', layer=layer)
+                    points_within_polygons = gpd.sjoin(polygon_gdf,points , how='right', predicate='intersects')
+                    points_within_polygons = points_within_polygons[~np.isnan(points_within_polygons['index_left'])]
+                    if len(points_within_polygons)>0:
+                        print(layer)
                         
-                            passes.append(categories[0].next_sibling.strip('" \n').split(", ")[0])
-                            tiles.append(categories[1].next_sibling.strip('" \n').split(", ")[0])
-                            scenes.append(categories[2].next_sibling.strip('" \n').split(", ")[0])
-                            names.append(points_within_polygons.iloc[i][name_id])
+                        for i in range(0,len(points_within_polygons)):
+                            soup = BeautifulSoup(points_within_polygons.iloc[i]['description'], "html.parser")
+                            categories = soup('b', text=lambda text: text and text.endswith(":"))
+                            if len(categories)>0:
+                            
+                                passes.append(categories[0].next_sibling.strip('" \n').split(", ")[0])
+                                tiles.append(categories[1].next_sibling.strip('" \n').split(", ")[0])
+                                scenes.append(categories[2].next_sibling.strip('" \n').split(", ")[0])
+                                names.append(points_within_polygons.iloc[i][name_id])
     
         science = pd.DataFrame({'pass':passes,'tiles':tiles,'scenes':scenes,'filename':names})
         return science
@@ -144,7 +145,7 @@ def compile_all(calval,science,csv,name_id):
     return csv
 
 
-base_dir = Path(os.path.dirname(os.getcwd()))
+base_dir = Path(os.path.realpath(__file__)).parent.parent
 orbit_path = base_dir / 'orbit_files' 
 Path(orbit_path).mkdir(parents=True, exist_ok=True)
 
@@ -160,20 +161,25 @@ if pd.isna(LUT['pass']).all() | pd.isna(LUT['scene']).all() | pd.isna(LUT['tile'
     calval = scan_calval(points,'aoi')
     science = scan_science(points,'aoi')
     final = compile_all(calval,science,LUT,'aoi')
+    aoi_passes = ['PASS_%s' %(p) for p in final['pass'][0]]
     aoi_template.loc[aoi_template['aoi'] == aoi] = final
     aoi_template.to_csv(base_dir / 'aoi_template.csv',index=False)
 else:
     print('\n%s Pass, Scene, Tile already determined - check aoi_template.csv' %(aoi))
-    
+    aoi_passes = ['PASS_%s' %(p) for p in ast.literal_eval(LUT['pass'][0])]
+    print('Passes: ',aoi_passes)
+
 point_template = pd.read_csv(base_dir / 'point_template.csv')
+LUT =  point_template[point_template['aoi']==aoi]
 if pd.isna(point_template['pass']).all() | pd.isna(point_template['scene']).all() | pd.isna(point_template['tile']).all():
     print('\n\nDetermine Pass, Scene, and Tile for %s' %(point_template['name'].values))
-    points = gpd.GeoDataFrame({'name':point_template['name'],'geometry': gpd.points_from_xy(point_template['longitude'], point_template['latitude'])}, crs="EPSG:4326")
+    points = gpd.GeoDataFrame({'name':LUT['name'],'geometry': gpd.points_from_xy(LUT['longitude'], LUT['latitude'])}, crs="EPSG:4326")
     calval = scan_calval(points,'name')
-    science = scan_science(points,'name')
-    point_template = compile_all(calval,science,point_template,'name')
+    science = scan_science(points,'name',aoi_passes)
+    final = compile_all(calval,science,point_template,'name')
+    for pt in np.unique(final['name']):
+        point_template.loc[point_template['name'] == pt] = final[final['name']==pt]
     point_template.to_csv(str(base_dir / 'point_template.csv'),index=False)
-
 else:
     print('\n\nAll points Pass, Scene, Tile already determined - check point_template.csv')
 
