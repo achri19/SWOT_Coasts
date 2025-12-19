@@ -171,7 +171,7 @@ if pd.isna(point_template['pass']).all() | pd.isna(point_template['scene']).all(
     points = gpd.GeoDataFrame({'name':point_template['name'],'geometry': gpd.points_from_xy(point_template['longitude'], point_template['latitude'])}, crs="EPSG:4326")
     calval = scan_calval(points,'name')
     science = scan_science(points,'name')
-    point_template = compile_all(calval,science,LUT,'name')
+    point_template = compile_all(calval,science,point_template,'name')
     point_template.to_csv(str(base_dir / 'point_template.csv'))
 
 else:
