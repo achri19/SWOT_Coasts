@@ -161,7 +161,7 @@ if pd.isna(LUT['pass']).all() | pd.isna(LUT['scene']).all() | pd.isna(LUT['tile'
     science = scan_science(points,'aoi')
     final = compile_all(calval,science,LUT,'aoi')
     aoi_template.loc[aoi_template['aoi'] == aoi] = final
-    aoi_template.to_csv(base_dir / 'aoi_template.csv')
+    aoi_template.to_csv(base_dir / 'aoi_template.csv',index=False)
 else:
     print('\n%s Pass, Scene, Tile already determined - check aoi_template.csv' %(aoi))
     
@@ -172,7 +172,7 @@ if pd.isna(point_template['pass']).all() | pd.isna(point_template['scene']).all(
     calval = scan_calval(points,'name')
     science = scan_science(points,'name')
     point_template = compile_all(calval,science,point_template,'name')
-    point_template.to_csv(str(base_dir / 'point_template.csv'))
+    point_template.to_csv(str(base_dir / 'point_template.csv'),index=False)
 
 else:
     print('\n\nAll points Pass, Scene, Tile already determined - check point_template.csv')
