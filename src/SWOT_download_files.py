@@ -22,10 +22,10 @@ import fnmatch
 ##############################################################################
 ##############################################################################
 ## Set Directory
-base_dir = Path(os.path.dirname(os.getcwd())).parent
+base_dir = Path(os.path.dirname(os.getcwd()))
 
 
-bounding_LUT = pd.read_csv(base_dir / 'config'/ 'aoi_SWOT_all.csv')
+bounding_LUT = pd.read_csv(base_dir / 'examples_template.csv')
 aois = list(bounding_LUT['aoi'])
 
 
@@ -45,7 +45,11 @@ if len(sys.argv) < 2:
 
 if args.interactive:
     aoi = input('which AOI (if none, you need bounding box): %s '%(aois))
+    LUT =  bounding_LUT[bounding_LUT['aoi']==aoi].reset_index()
+
     version = str(input('Which version C or D? '))
+    processing = 'P*%s*' %(version) 
+
     if version == 'C':
         version = '2.0'
     products = {0:'SWOT_L2_HR_PIXC',1:'SWOT_L2_HR_Raster',2:'SWOT_L2_HR_RiverSP',3:'SWOT_L2_HR_LakeSP',4:'SWOT_L2_HR_PIXCVec',5:'SWOT_L2_LR_SSH'}
@@ -57,10 +61,16 @@ if args.interactive:
         L3 = input('Do you want to download L3 v2.0.1 products from AVISO (username/password required)? y/n')
     else:
         mode = 'HR'
-
-    processing = str(input('which version? PIB0_01 or PGC0_01 or PGC0_02 or any *' ))
-    startdate = str(input('start date: %Y-%m-%d %H:%M:%S '))
-    enddate = str(input('end date: %Y-%m-%d %H:%M:%S '))
+    if aoi not in aois:
+        print('what bounding box (lat/lon in decimal degrees)')
+        area = [input('xmin: '),input('ymin: '),input('xmax: '),input('ymax: ')]
+        startdate = str(input('start date: %Y-%m-%d %H:%M:%S '))
+        enddate = str(input('end date: %Y-%m-%d %H:%M:%S '))
+    else:
+        area = [LUT['minx'][0],LUT['miny'][0],LUT['maxx'][0],LUT['maxy'][0]]
+        startdate = str(LUT['startdate'][0])
+        enddate = str(LUT['enddate'][0])
+    
 
     
 else:
@@ -75,13 +85,6 @@ else:
 #############################################################################
 #############################################################################
 ## Get bounding areas of default AOIs
-LUT =  bounding_LUT[bounding_LUT['aoi']==aoi].reset_index()
-if aoi not in aois:
-    print('what bounding box (lat/lon in decimal degrees)')
-    area = [input('xmin: '),input('ymin: '),input('xmax: '),input('ymax: ')]
-else:
-    area = [LUT['minx'][0],LUT['miny'][0],LUT['maxx'][0],LUT['maxy'][0]]
-
 
 
 ### Create directory for data
@@ -104,7 +107,7 @@ if mode == 'LR':
     results = [i for i in results if i['umm']['GranuleUR'].split('_')[4] in ['Expert','Unsmoothed']]
     
 if len(results)>0:
-    print(len(results))
+    print('Number of Matching Results = ', len(results))
     earthaccess.download(results[:], version_folder)
     
     
