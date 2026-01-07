@@ -19,6 +19,7 @@ import sys
 import paramiko
 import getpass
 import fnmatch
+
 ##############################################################################
 ##############################################################################
 ## Set Directory
@@ -70,6 +71,9 @@ if args.interactive:
         area = [LUT['minx'][0],LUT['miny'][0],LUT['maxx'][0],LUT['maxy'][0]]
         startdate = str(LUT['startdate'][0])
         enddate = str(LUT['enddate'][0])
+        if (startdate=='nan') | (enddate=='nan') :
+            startdate = str(input('start date: %Y-%m-%d %H:%M:%S '))
+            enddate = str(input('end date: %Y-%m-%d %H:%M:%S '))
     
 
     
