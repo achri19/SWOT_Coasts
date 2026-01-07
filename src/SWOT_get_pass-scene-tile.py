@@ -153,7 +153,7 @@ Path(orbit_path).mkdir(parents=True, exist_ok=True)
 ## Get Pass, Scene, and Tile for the examples_template.csv
 aoi_template = pd.read_csv(base_dir / 'aoi_template.csv')
 aois = list(aoi_template['aoi'])
-aoi = input('\nwhich AOI (if none, you need bounding box): %s '%(aois))
+aoi = input('\nwhich AOI (you must add AOI bounding box to the aoi_template.csv and individual point coordinates to point_template.csv. Leave the pass, scene, and tile columns blank): %s '%(aois))
 LUT =  aoi_template[aoi_template['aoi']==aoi].iloc[[0]]
 if pd.isna(LUT['pass']).all() | pd.isna(LUT['scene']).all() | pd.isna(LUT['tile']).all():
     print('\nDetermine Pass, Scene, and Tile for %s' %(aoi))
@@ -161,7 +161,7 @@ if pd.isna(LUT['pass']).all() | pd.isna(LUT['scene']).all() | pd.isna(LUT['tile'
     calval = scan_calval(points,'aoi')
     science = scan_science(points,'aoi')
     final = compile_all(calval,science,LUT,'aoi')
-    aoi_passes = ['PASS_%s' %(p) for p in final['pass'][0]]
+    aoi_passes = ['PASS_%s' %(p) for p in final['pass'].iloc[0]]
     aoi_template.loc[aoi_template['aoi'] == aoi] = final
     aoi_template.to_csv(base_dir / 'aoi_template.csv',index=False)
 else:
@@ -171,7 +171,7 @@ else:
 
 point_template = pd.read_csv(base_dir / 'point_template.csv')
 LUT =  point_template[point_template['aoi']==aoi]
-if pd.isna(point_template['pass']).all() | pd.isna(point_template['scene']).all() | pd.isna(point_template['tile']).all():
+if pd.isna(LUT['pass']).all() | pd.isna(LUT['scene']).all() | pd.isna(LUT['tile']).all():
     print('\n\nDetermine Pass, Scene, and Tile for %s' %(point_template['name'].values))
     points = gpd.GeoDataFrame({'name':LUT['name'],'geometry': gpd.points_from_xy(LUT['longitude'], LUT['latitude'])}, crs="EPSG:4326")
     calval = scan_calval(points,'name')
