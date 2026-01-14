@@ -111,14 +111,15 @@ l2_processing = 'P*%s*' %(l2version) #Get all version C and use only the highest
 
 
 ### Create directory for L2 data
-L2LR_fig_folder = L2LR_folder / 'plots'
-Path(L2LR_fig_folder).mkdir(parents=True, exist_ok=True)
-
-L2LR_output_folder = L2LR_folder / 'final'
+L2LR_output_folder = L2LR_folder / 'Extracted'
 Path(L2LR_output_folder).mkdir(parents=True, exist_ok=True)
 
 ## Get L2 LR variables from reference dataset
-ref_l2 = glob.glob(str(L2LR_output_folder / ('*Expert_*_*_%s.geojson' %(aoi))))[0]
+try:
+    ref_l2 = glob.glob(str(L2LR_output_folder / ('*Expert_*_*_%s.geojson' %(aoi))))[0]
+except:
+    print('No matching L2 LR SSH Expert Geojson files were found, make sure to run SWOT_L2-L3_LR_process.py first')
+    sys.exit(1)
 ds = gpd.read_file(ref_l2)
 variables_to_savel2 = list(ds.columns)
 
@@ -129,16 +130,23 @@ l3lr_prefix = 'SWOT_L3_LR_SSH_' +l3version ## Change if you want to process a di
 L3LR_folder = base_dir / 'Data' / l3lr_prefix
 Path(L3LR_folder).mkdir(parents=True, exist_ok=True)
 
-L3LR_fig_folder = L3LR_folder / 'plots'
-Path(L3LR_fig_folder).mkdir(parents=True, exist_ok=True)
-
-L3LR_output_folder = L3LR_folder / 'final'
+L3LR_output_folder = L3LR_folder / 'Extracted'
 Path(L3LR_output_folder).mkdir(parents=True, exist_ok=True)
 
 ## Get L2 LR variables from reference dataset
-ref_l3 = glob.glob(str(L3LR_output_folder / ('*Expert_*_*_%s.geojson' %(aoi))))[0]
-ds = gpd.read_file(ref_l3)
-variables_to_savel3 = list(ds.columns)
+try:
+    ref_l3 = glob.glob(str(L3LR_output_folder / ('*Expert_*_*_%s.geojson' %(aoi))))[0]
+    ds = gpd.read_file(ref_l3)
+except:
+    print('There are no L3 products available, proceeding with only L2')
+    variables_to_savel3 = []
+    swot_products = ['SWOT_L2_LR_SSH_Expert','SWOT_L2_LR_SSH_Unsmoothed']
+else:
+    variables_to_savel3 = list(ds.columns)
+    swot_products = ['SWOT_L2_LR_SSH_Expert','SWOT_L2_LR_SSH_Unsmoothed','SWOT_L3_LR_SSH_Expert','SWOT_L3_LR_SSH_Unsmoothed']
+
+
+
 
 
 
@@ -146,7 +154,7 @@ variables_to_savel3 = list(ds.columns)
 output_dir = base_dir / 'Examples' / aoi
 Path(output_dir).mkdir(parents=True, exist_ok=True)
 
-coords = pd.read_csv(base_dir / 'points_template.csv')
+coords = pd.read_csv(base_dir / 'point_template.csv')
 coords = coords[coords['aoi']==aoi].reset_index()
 try: 
     passes = [ast.literal_eval(i) for i in coords['pass']]
@@ -185,7 +193,6 @@ else:
 variables_to_remove = ['crs']#,'wind_speed_rad','rad_surface_type_flag','rad_tmb_187','rad_tmb_238','rad_tmb_340','rad_water_vapor','rad_cloud_liquid_water']
 
 
-swot_products = ['SWOT_L2_LR_SSH_Expert','SWOT_L2_LR_SSH_Unsmoothed','SWOT_L3_LR_SSH_Expert','SWOT_L3_LR_SSH_Unsmoothed']
 
 for g in gs:
     ## Gauge Name
@@ -226,13 +233,13 @@ for g in gs:
             save_swot_df = {k: [] for k in variables_to_save + (['dist','unipix','avgtime','mode','cycle','pass','file','avgtimestr','gauge'])}
                 
             for passs in passes[:]:
-                matching_passes = glob.glob(str(base_dir / 'Data' / '*' / 'final'/('%s_*_%s_*_%s_lat%s-%s_%s.geojson' %(product,passs,processing,np.round(area2[1],1),np.round(area2[3],1),aoi))))
+                matching_passes = glob.glob(str(base_dir / 'Data' / '*' / 'Extracted'/('%s_*_%s_*_%s_lat%s-%s_%s.geojson' %(product,passs,processing,np.round(area2[1],1),np.round(area2[3],1),aoi))))
                 print('[%s %s]\tPass: %s = %s' %(product, gauge_name, passs,len(matching_passes)))           
                 cycles = np.unique([matching_passes[i].split('/')[-1].split('_')[5] for i in range(len(matching_passes))])
                 cycles.sort()
                 for cycle in cycles:
                     
-                    matches = sorted(glob.glob(str(base_dir / 'Data' / '*' / 'final'/('%s_%s_%s_*_%s_lat%s-%s_%s.geojson' %(product,cycle,passs,processing, np.round(area2[1],1),np.round(area2[3],1),aoi)))))
+                    matches = sorted(glob.glob(str(base_dir / 'Data' / '*' / 'Extracted'/('%s_%s_%s_*_%s_lat%s-%s_%s.geojson' %(product,cycle,passs,processing, np.round(area2[1],1),np.round(area2[3],1),aoi)))))
                     if len(matches)>0:
 
                         file = matches[-1]
