@@ -9,6 +9,7 @@ Created on Wed Oct  4 08:04:53 2023
 ## If you just want to download files, this script will do that.
 ## Earth Data Login credentials are required
 ## If your AOI is not one already programmed, you'll need to define a bounding box
+## Template file is stored in the repo root directory: aoi_template.csv
 
 import os
 from pathlib import Path
@@ -20,8 +21,9 @@ import paramiko
 import getpass
 import fnmatch
 
-##############################################################################
-##############################################################################
+#############################################################################
+#############################################################################
+#############################################################################
 ## Set Directory
 base_dir = Path(os.path.realpath(__file__)).parent.parent
 
@@ -30,6 +32,10 @@ bounding_LUT = pd.read_csv(base_dir / 'aoi_template.csv')
 aois = list(bounding_LUT['aoi'])
 
 
+#############################################################################
+#############################################################################
+#############################################################################
+## Get search parameters 
 parser=argparse.ArgumentParser(
     description='''Script to download SWOT data using earthaccess ''')
 
@@ -58,10 +64,12 @@ if args.interactive:
     L3 = 'n'
     if 'SWOT_L2_LR_SSH' in short_name:
         mode = 'LR'
+        print('For LR mode, only Expert and Unsmoothed products will be downloaded')
         # product = input('Which product? SSH_EXPERT SSH_BASIC SSH_UNSMOOTHED SSH_WINDWAVE for all, use SSH ')
         L3 = input('Do you want to download L3 v2.0.1 products from AVISO (username/password required)? y/n')
     else:
         mode = 'HR'
+    ## Get bounding areas and search dates
     if aoi not in aois:
         print('what bounding box (lat/lon in decimal degrees)')
         area = [input('xmin: '),input('ymin: '),input('xmax: '),input('ymax: ')]
@@ -88,12 +96,8 @@ else:
 #############################################################################
 #############################################################################
 #############################################################################
-## Get bounding areas of default AOIs
-
-
 ### Create directory for data
 product_folder = base_dir /'Data' / short_name
-# Path(product_folder).mkdir(parents=True, exist_ok=True)
 if mode == 'LR': 
     version_folder = product_folder 
 elif mode == 'HR':
@@ -101,8 +105,8 @@ elif mode == 'HR':
 print('Search bounding box: %s' %area)
 Path(version_folder).mkdir(parents=True, exist_ok=True)
 print('files will be saved here: ', version_folder)
-print('short_name: %s' %(short_name))
 ## Search NASA Earth Data for matching data products
+print('short_name: %s' %(short_name))
 auth = earthaccess.login() 
 results = earthaccess.search_data(short_name = short_name, 
                                   temporal = (startdate, enddate), # can also specify by time
@@ -116,7 +120,11 @@ if len(results)>0:
     earthaccess.download(results[:], version_folder,show_progress=True)
     
     
-
+#############################################################################
+#############################################################################
+#############################################################################
+## Code for downloading L3 products using FTP from AVISO. 
+## This requires an AVISO account and password
 if L3 != 'n' :
     
     l3version = input('Which L3 version? 2.0.1 is the latest ')
