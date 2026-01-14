@@ -98,6 +98,7 @@ if mode == 'LR':
     version_folder = product_folder 
 elif mode == 'HR':
     version_folder = product_folder / aoi
+print('Search bounding box: %s' %area)
 Path(version_folder).mkdir(parents=True, exist_ok=True)
 print('files will be saved here: ', version_folder)
 print('short_name: %s' %(short_name))
