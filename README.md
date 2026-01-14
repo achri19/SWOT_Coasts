@@ -12,12 +12,12 @@ conda activate swot
 ```
 
 ## Configuration files
-CSVs of AOIs and bounding boxes will be read into the first two workflows below:
+CSVs of point and area **Areas of Interest (AOIs)** that simply input to some of the functions. Templates are provided and users are encouraged to enter their own AOIs into the csv: 
 
    - *aoi_template.csv* contains rows for areas of interest: aoi, minx, miny, maxx, maxy
    - *point_template.csv* contains rows with individual points: name, aoi, latitude, longitude
 
-A demo location (Amerada Pass in the Atchafalaya Riva, Louisiana) is included. Users are encouraged to add their AOIs and individual points to each CSV to download and process SWOT data for their study areas
+Templates are provided and include a demo location (Amerada Pass in the Atchafalaya Riva, Louisiana). Users are encouraged to add their own area and point AOIs to each CSV to download and process SWOT data for their study areas.
 
 
 # Workflows
