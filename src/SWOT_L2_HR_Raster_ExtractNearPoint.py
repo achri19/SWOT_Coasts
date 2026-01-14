@@ -111,15 +111,13 @@ else:
 l2_processing = 'P*%s*' %(l2version) #Get all version C and use only the highest number
 resolution = '100m'
 
-### Create directory for L2 data
-L2HR_fig_folder = L2HR_folder / 'plots'
-Path(L2HR_fig_folder).mkdir(parents=True, exist_ok=True)
-
-L2HR_output_folder = L2HR_folder / 'final'
-Path(L2HR_output_folder).mkdir(parents=True, exist_ok=True)
 
 ## Get L2 LR variables from reference dataset
-ref_l2 = glob.glob(str(L2HR_folder / ('%s_%s_*%s*.nc' %(l2hr_prefix,resolution,l2_processing))))[0]
+try:
+    ref_l2 = glob.glob(str(L2HR_folder / ('%s_%s_*%s*.nc' %(l2hr_prefix,resolution,l2_processing))))[0]
+except:
+    print('No matching L2 HR Raster products, make sure you downloaded files with SWOT_download_files.py first')
+    sys.exit(1)
 ds = xr.open_dataset(ref_l2)
 variables_to_save = list(ds.keys())
 
@@ -169,7 +167,7 @@ geoid_file = glob.glob(str(base_dir / ('*/' + geoid_name)))
 # lat_2d = meantide.broadcast_like(meantide_egm08['geoid']) 
 # search_radius_hr = 0.5# 1 #km
 
-print(len(gs))
+print('There are %s points within %s to process' %(len(gs),aoi))
 if args.index_array==None:
     gs = gs
 else:
