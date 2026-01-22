@@ -42,12 +42,27 @@ Templates are provided and include a demo location (Amerada Pass in the Atchafal
    python SWOT_get-pass-scene-tile.py
    ```
 
-## Extract SWOT HR Raster data around a point
-   - Extract SWOT data within a given search radius (km)
-   - Updated water surface elevation (WSE) values using a tide-free EGM08 geoid (SWOT geoid is mean tide EGM08 geoid)
-   - Add "good" flag that indicates which pixels have wse_qual == 0 and only with 10-60km on either side of the nadir.
-   - If a watermask is available, also flags pixels are being within or not within the water mask
+## Extract SWOT data around a point
+
+### LR SSH Data
+   - Once data are downloaded, we can pre-process the LR files to apply corrections, calculate water surface elevation, filter pixels. This script will produce a new file type (geojson), which will be used in subsequent workflos
+   - A replacement geoid model file can be provided, otherwise the geoid provided in SWOT (mean-tide EGM08) will be used
    
    ```
-   python SWOT_L2_HR_Raster_ExtractNearPoint --interactive
+   python SWOT_L2-L3_LR_PrelimProcess.py --interactive
+   ```
+   - Next, run the script to extract the corrected SWOT data within a chosen distance around a point(s) from the point_template.csv for a chosen AOI.
+   - This will produce a new geojson, with extract SWOT pixels for all available acquisitions
+   ```
+   python SWOT_L2-L3_LR_ExtractNearPoint.py --interactive
+   ```
+### HR Raster Data
+   - Unlike LR, there is only 1 step to extract SWOT HR Raster data around a point. This workflow will:
+      - Extract SWOT data within a given search radius (km)
+      - Updated water surface elevation (WSE) values using a tide-free EGM08 geoid (SWOT geoid is mean tide EGM08 geoid)
+      - Add "good" flag that indicates which pixels have wse_qual == 0 and only with 10-60km on either side of the nadir.
+      - If a watermask is available, also flags pixels are being within or not within the water mask
+   
+   ```
+   python SWOT_L2_HR_Raster_ExtractNearPoint.py --interactive
    ```
