@@ -300,13 +300,13 @@ def add_wse_LRL3(ds,ssha_var,geoid,corrections_to_remove):
 
 def interpolate_2km_to_250m(ds_side,ds,variables_to_interpret):    
     print('\nInterpolate from EXPERT 2km to UNSMOOTHED 250m')
-    print(variables_to_interpret)
+    # print(variables_to_interpret)
     side_lon = np.ma.masked_array(ds_side.longitude.values)
     side_lat = np.ma.masked_array(ds_side.latitude.values)
     expert_lon = np.ma.masked_array(ds.longitude.values)
     expert_lat = np.ma.masked_array(ds.latitude.values)
     for variable in variables_to_interpret:
-        print(variable, ds[variable].values.shape)
+        # print(variable, ds[variable].values.shape)
         expert = np.ma.masked_array(ds[variable].values)
         ds_side[variable] = (('num_lines','num_pixels'),interp_expert_to_unsmoothed_AlexFore(expert_lon, expert_lat, expert, side_lon, side_lat))
         ds_side[variable].attrs = ds[variable].attrs
