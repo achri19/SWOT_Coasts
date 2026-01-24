@@ -82,6 +82,7 @@ if args.interactive:
         if (startdate=='nan') | (enddate=='nan') :
             startdate = str(input('start date: %Y-%m-%d %H:%M:%S '))
             enddate = str(input('end date: %Y-%m-%d %H:%M:%S '))
+        print('Search from %s to %s' %(startdate,enddate))
     
 
     
