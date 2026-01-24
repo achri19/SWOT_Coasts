@@ -227,7 +227,8 @@ for g in gs:
                     year = int(date[:4])
                     matches = sorted(glob.glob(str(L2HR_folder/ ('%s_*%s*%s*.nc' %(product,pass_tile,date)))))
                     if len(matches)>0:
-                        print('\n[%s %s %s %s]\t\tDate: %s with %s matching files' %(aoi, product, gauge_name, pass_tile,date,len(matches)))
+                        print('\n[%s %s %s %s]' %(aoi, product, gauge_name, pass_tile))
+                        print('Date: %s with %s matching files' %(date,len(matches)))
                         file = matches[-1]
                         fn = file.split('/')[-1]
                         cycle = fn.split('_')[10]
