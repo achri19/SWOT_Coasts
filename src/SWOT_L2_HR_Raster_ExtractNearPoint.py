@@ -149,6 +149,7 @@ coords = pd.read_csv(base_dir / 'point_template.csv')
 coords = coords[coords['aoi']==aoi].reset_index()
 
 g_names = coords['name']
+print(g_names)
 gs = np.arange(0,len(g_names))
 g_lons = coords['longitude'].astype(float)
 g_lats = coords['latitude'].astype(float)
