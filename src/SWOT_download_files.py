@@ -99,15 +99,14 @@ else:
 #############################################################################
 ### Create directory for data
 product_folder = base_dir /'Data' / short_name
-if mode == 'LR': 
-    version_folder = product_folder 
-elif mode == 'HR':
-    version_folder = product_folder / aoi
+version_folder = product_folder 
+
 print('Search bounding box: %s' %area)
 Path(version_folder).mkdir(parents=True, exist_ok=True)
 print('files will be saved here: ', version_folder)
 ## Search NASA Earth Data for matching data products
 print('short_name: %s' %(short_name))
+print('Search %s - %s' %(startdate,enddate))
 auth = earthaccess.login() 
 results = earthaccess.search_data(short_name = short_name, 
                                   temporal = (startdate, enddate), # can also specify by time

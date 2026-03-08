@@ -1,3 +1,715 @@
-﻿name,latitude,longitude,pass,scene,tile
-amerada1,29.45,91.338,,,
-amerada2,29.456,91.34,,,
+Unnamed: 0,name,aoi,latitude,longitude,pass,scene,tile,insitu_data_path,wlvar,datevar
+0,pt1,amerada,29.45,-91.338,"['007', '438']","['161L', '148L']","['081F', '074F']",,,
+1,pt2,amerada,29.456,-91.34,[],[],[],,,
+2,pt1,soldado,3.76131,-77.166473,"['007', '438']","['161L', '148L']","['081F', '074F']",,,
+3,pt2,soldado,3.755192,-77.083241,"['007', '438']","['161L', '148L']","['081F', '074F']",,,
+4,puetro-del-morro,guayas,-2.609968,-80.302002,"['035', '188', '009']","['150R', '159R', '150R']","['075F', '080F', '075F']",2104584_puerto-morro_20230521-20240509.0.csv,LEVEL,datetime_UTC
+5,morro2,guayas,-2.647,-80.2542,"['035', '188', '009']","['150R', '159R', '150R']","['075F', '080F', '075F']",2104584_puerto-morro_20230521-20240509.0.csv,LEVEL,datetime_UTC
+6,morro3,guayas,-2.61578,-80.27541,"['035', '188', '009']","['150R', '159R', '150R']","['075F', '080F', '075F']",2104584_puerto-morro_20230521-20240509.0.csv,LEVEL,datetime_UTC
+7,rioguayas,guayas,-2.195,-79.88,"['035', '188']","['151R', '158L']","['076F', '079F']",SLSMF_gyer_rad_2023-01-01-2025-12-31,slevel,stime
+8,puna,guayas,-2.735,-79.912,"['035', '188']","['150R', '159L']","['075F', '080F']",SLSMF_puna_rad_2023-01-01-2025-12-31,slevel,stime
+9,bolivar,guayas,-3.25927,-80.00194,"['035', '188']","['149R', '160L']","['075F', '080F']",SLSMF_pbol_rad_2023-01-01-2025-12-31,slevel,stime
+10,lacruz,guayas,-3.6336111,-80.5875,"['035', '188', '009']","['148L', '161R', '148R']","['074F', '081F', '074F']",SLSMF_lacr_ecs_2023-01-01-2025-12-31,slevel,stime
+11,libertadII,guayas,-2.2177,-80.9064,"['009', '009']","['151L', '151L']","['076F', '076F']",SLSMF_lali_prs_2023-01-01-2025-12-31,slevel,stime
+12,lopez,guayas,-1.561,-80.817,['188'],['157R'],['079F'],SLSMF_plop_ras_2023-01-01-2025-12-31,slevel,stime
+13,talara,guayas,-4.5751,-81.2827,"['009', '009']","['151L', '151L']","['076F', '076F']",SLSMF_tala2_prs_2023-01-01-2025-12-31,slevel,stime
+14,daule,guayas,-1.854488,-79.985177,"['035', '188']","['151R', '158L']","['076F', '079F']",,slevel,stime
+15,colimes,guayas,-1.547936,-80.007603,"['035', '188']","['152R', '157L']","['076F', '079F']",,slevel,stime
+16,bulubulu,guayas,-2.25621,-79.556835,"['313', '466']","['150L', '158R']","['075F', '079F']",,slevel,stime
+17,palmar,guayas,-1.835361,-79.441111,"['313', '466']","['151L', '158R']","['076F', '079F']",,slevel,stime
+18,3460_chs,stlawrence,48.3339,-70.869267,"['242', '341', '548']","['069R', '240L', '069L']","['035F', '120F', '035F']",3460_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+19,3440_chs,stlawrence,48.245,-70.179667,"['035', '242', '341', '009']","['239L', '069L', '240R', '239L']","['120F', '035F', '120F', '120F']",3440_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+20,ptsg_sol,stlawrence,48.23884444,-70.10206389,"['035', '242', '341', '009']","['239L', '069L', '240R', '239L']","['120F', '035F', '120F', '120F']",ptsg_sol_l2.csv,wlvl CGVD28 (m),datetime UTC
+21,ptsg_ct2x,stlawrence,48.23884444,-70.10206389,"['035', '242', '341', '009']","['239L', '069L', '240R', '239L']","['120F', '035F', '120F', '120F']",ptsg_ct2x_l2.csv,wlvl CGVD28 (m),datetime UTC
+22,3424_chs,stlawrence,48.126333,-69.72975,"['035', '242', '520', '009']","['239L', '070L', '069R', '239R']","['120F', '035F', '035F', '120F']",3424_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+23,3248_chs,stlawrence,46.811111,-71.20175,"['341', '548', '009']","['237L', '072R', '237L']","['119F', '036F', '119F']",3248_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+24,3248_gnssir,stlawrence,46.81116517,-71.20182317,"['341', '548', '009']","['237L', '072R', '237L']","['119F', '036F', '119F']",3248_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+25,ptio_gnssir,stlawrence,46.8802302,-71.13829783,"['341', '548', '009']","['237R', '072R', '237L']","['119F', '036F', '119F']",ptio_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+26,chri_gnssir,stlawrence,46.96724967,-71.01985842,"['341', '548', '009']","['237R', '072R', '237L']","['119F', '036F', '119F']",chri_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+27,sab1_gnssir,stlawrence,47.01836175,-70.9256845,"['341', '548', '009']","['237R', '072L', '237L']","['119F', '036F', '119F']",sab1_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+28,3110_chs,stlawrence,46.85816667,-71.00333333,"['341', '548', '009']","['237R', '072R', '237L']","['119F', '036F', '119F']",3110_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+29,3110_gnssir,stlawrence,46.8581945,-71.00388638,"['341', '548', '009']","['237R', '072R', '237L']","['119F', '036F', '119F']",3110_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+30,sjio_gnssir,stlawrence,46.915536,-70.8961955,"['341', '548', '009']","['237R', '072L', '237L']","['119F', '036F', '119F']",sjio_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+31,3100_chs,stlawrence,46.9965,-70.808167,"['341', '548', '009']","['237R', '072L', '237L']","['119F', '036F', '119F']",3100_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+32,brsm_gnssir,stlawrence,46.93521258,-70.73588658,"['035', '341', '548', '009']","['237L', '237R', '072L', '237L']","['119F', '119F', '036F', '119F']",brsm_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+33,3190_chs,stlawrence,47.0195,-70.670833,"['035', '341', '548', '009']","['237L', '237R', '072L', '237L']","['119F', '119F', '036F', '119F']",3190_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+34,3075_chs,stlawrence,47.0895,-70.710833,"['341', '548', '009']","['238R', '072L', '237L']","['119F', '036F', '119F']",3075_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+35,ilag_gnssir,stlawrence,47.05533058,-70.53228225,"['035', '242', '341', '548', '009']","['237L', '071R', '238R', '072L', '237L']","['119F', '036F', '119F', '036F', '119F']",ilag_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+36,ilsm_gnssir,stlawrence,47.13406742,-70.37016392,"['035', '242', '341', '548', '009']","['237L', '071R', '238R', '072L', '238L']","['119F', '036F', '119F', '036F', '119F']",ilsm_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+37,3170_chs,stlawrence,47.216167,-70.274667,"['035', '242', '341', '548', '009']","['238L', '071R', '238R', '072L', '238L']","['119F', '036F', '119F', '036F', '119F']",3170_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+38,prsf_gnssir,stlawrence,47.30390971,-70.56145042,"['035', '242', '341', '548', '009']","['238L', '071R', '238R', '071L', '238L']","['119F', '036F', '119F', '036F', '119F']",prsf_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+39,srda_sol,stlawrence,47.31710836,-70.17173935,"['035', '242', '341', '009']","['238L', '071R', '238R', '238L']","['119F', '036F', '119F', '119F']",srda_sol_l2.csv,wlvl CGVD28 (m),datetime UTC
+40,srda_ct2x,stlawrence,47.31710836,-70.17173935,"['035', '242', '341', '009']","['238L', '071R', '238R', '238L']","['119F', '036F', '119F', '119F']",srda_ct2x_l2.csv,wlvl CGVD28 (m),datetime UTC
+41,3057_chs,stlawrence,47.448833,-70.3655,"['035', '242', '341', '548', '009']","['238L', '071R', '238R', '071L', '238L']","['119F', '036F', '119F', '036F', '119F']",3057_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+42,cpao_sol,stlawrence,47.49434611,-70.22882732,"['035', '242', '341', '009']","['238L', '071R', '238R', '238L']","['119F', '036F', '119F', '119F']",cpao_sol_l2.csv,wlvl CGVD28 (m),datetime UTC
+43,cpao_ct2x,stlawrence,47.49434611,-70.22882732,"['035', '242', '341', '009']","['238L', '071R', '238R', '238L']","['119F', '036F', '119F', '119F']",cpao_ct2x_l2.csv,wlvl CGVD28 (m),datetime UTC
+44,ptor_sol,stlawrence,47.46596713,-70.03645713,"['035', '242', '341', '009']","['238L', '071R', '238R', '238R']","['119F', '036F', '119F', '119F']",ptor_sol_l2.csv,wlvl CGVD28 (m),datetime UTC
+45,ptor_ct2x,stlawrence,47.46596713,-70.03645713,"['035', '242', '341', '009']","['238L', '071R', '238R', '238R']","['119F', '036F', '119F', '119F']",ptor_ct2x_l2.csv,wlvl CGVD28 (m),datetime UTC
+46,3130_chs,stlawrence,47.846833,-69.571833,"['035', '242', '520', '009']","['239L', '070L', '070R', '239R']","['120F', '035F', '035F', '120F']",3130_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+47,ilvs_gnssir,stlawrence,48.03962108,-69.40630679,"['035', '242', '520', '009']","['239R', '070L', '070R', '239R']","['120F', '035F', '035F', '120F']",ilvs_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+48,ilvn_sol,stlawrence,48.0528723,-69.42324474,"['035', '242', '520', '009']","['239R', '070L', '070R', '239R']","['120F', '035F', '035F', '120F']",ilvn_sol_l2.csv,wlvl CGVD28 (m),datetime UTC
+49,grbr_gnssir,stlawrence,48.2279735,-69.55438938,"['035', '242', '520', '009']","['239L', '070L', '069R', '240R']","['120F', '035F', '035F', '120F']",grbr_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+50,trps_gnssir,stlawrence,48.16995846,-69.13267567,"['035', '520', '009']","['240R', '070R', '240R']","['120F', '035F', '120F']",trps_gnssir_l2.csv,wlvl CGVD28 (m),datetime UTC
+51,2985_chs,stlawrence,48.478333,-68.513667,"['035', '214', '313', '520']","['240R', '069R', '240L', '069L']","['120F', '035F', '120F', '035F']",2985_chs_l2.csv,wlvl CGVD28 (m),datetime UTC
+52,IssigaVillage,komo,0.312185995,9.375994038,"['042', '016']","['154R', '154R']","['077F', '077F']",komo_IssigaVillage_updateWSE_gauge_removedry.csv,WL_EGM08_dry,Time
+53,Obelo village,komo,0.133880032,9.423982026,"['042', '016']","['154L', '154R']","['077F', '077F']",komo_ObeloVillage_updateWSE_gauge.csv,WL_EGM08,Time
+54,Agoume,komo,0.059728017,9.496295974,"['042', '473', '016']","['154L', '154L', '154R']","['077F', '077F', '077F']",,WL_EGM08,Time
+55,Obelo,komo,0.205645971,9.42424899,"['042', '016']","['154L', '154R']","['077F', '077F']",,WL_EGM08,Time
+56,Obelo barometer,komo,0.205569,9.424142,"['042', '016']","['154L', '154R']","['077F', '077F']",,WL_EGM08,Time
+57,Tchentchoua,komo,0.022892989,9.806173006,"['042', '473', '016']","['155L', '154L', '155L']","['078F', '077F', '078F']",komo_Tchentchoua_updateWSE_gauge.csv,WL_EGM08,Time
+58,Kango,komo,0.168051962,10.07457797,"['320', '473', '016']","['154R', '155R', '154L']","['077F', '078F', '077F']",,WL_EGM08,Time
+59,Ompomouena,komo,-0.83133,10.14837,"['473', '016']","['153R', '156L']","['077F', '078F']",,WL_EGM08,Time
+60,Ngomo,komo,-0.828516008,9.983669026,"['042', '473', '016']","['156L', '153R', '156L']","['078F', '077F', '078F']",,WL_EGM08,Time
+61,N'tyatanga barometer,komo,-0.825532973,10.120559,"['042', '473', '016']","['156L', '153R', '156L']","['078F', '077F', '078F']",,WL_EGM08,Time
+62,Irongombene,komo,0.133359013,9.765770976,"['042', '473', '016']","['154L', '155L', '154L']","['077F', '078F', '077F']",,WL_EGM08,Time
+63,Irongombene barometer,komo,0.132966,9.765733,"['042', '473', '016']","['154L', '155L', '154L']","['077F', '078F', '077F']",,WL_EGM08,Time
+64,Abongo,komo,-0.66717,10.24303,"['320', '473', '016']","['156R', '153R', '156L']","['078F', '077F', '078F']",,WL_EGM08,Time
+65,Ngoumbi,komo,-0.93759,9.6124,"['042', '473', '016']","['156L', '153L', '156R']","['078F', '077F', '078F']",,WL_EGM08,Time
+66,Egnonga,komo,-1.04233,9.33766,"['042', '473', '016']","['156R', '153L', '156R']","['078F', '077F', '078F']",,WL_EGM08,Time
+67,CAPAL,komo,0.3668,9.46092,"['042', '016']","['154L', '154R']","['077F', '077F']",,WL_EGM08,Time
+68,Mandje barometer,komo,-0.990871,9.506377,"['042', '473', '016']","['156R', '153L', '156R']","['078F', '077F', '078F']",,WL_EGM08,Time
+69,CRMS0002-H01,louisiana,30.10031149,-89.79156699,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS0002-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+70,CRMS0003-H01,louisiana,30.09987807,-89.2520134,"['203', '522']","['207R', '102L']","['104F', '051F']",CRMS0003-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+71,CRMS0006-H01,louisiana,30.26360139,-89.98232733,"['203', '244', '522']","['207L', '102L', '101R']","['104F', '051F', '051F']",CRMS0006-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+72,CRMS0008-H01,louisiana,30.24245515,-90.68971395,"['244', '509']","['101R', '208R']","['051F', '104F']",CRMS0008-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+73,CRMS0008-H02,louisiana,30.2284139,-90.68523893,"['244', '509']","['102R', '208R']","['051F', '104F']",CRMS0008-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+74,CRMS0008-W01,louisiana,30.2284139,-90.68523893,"['244', '509']","['102R', '208R']","['051F', '104F']",CRMS0008-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+75,CRMS0030-H01,louisiana,30.30395152,-90.32513692,"['244', '509']","['101L', '208R']","['051F', '104F']",CRMS0030-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+76,CRMS0033-H01,louisiana,30.27716802,-90.3870363,"['244', '509']","['102L', '208R']","['051F', '104F']",CRMS0033-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+77,CRMS0034-H01,louisiana,30.30562451,-90.38865508,"['244', '509']","['101L', '208R']","['051F', '104F']",CRMS0034-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+78,CRMS0035-H01,louisiana,30.26729475,-89.66461512,"['203', '522']","['208L', '101R']","['104F', '051F']",CRMS0035-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+79,CRMS0038-H01,louisiana,30.21344822,-90.67751391,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0038-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+80,CRMS0039-H01,louisiana,30.10734443,-90.68523889,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0039-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+81,CRMS0046-H01,louisiana,30.40558861,-90.49727495,"['244', '509']","['101L', '208R']","['051F', '104F']",CRMS0046-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+82,CRMS0047-H01,louisiana,30.13386842,-90.53438393,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0047-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+83,CRMS0056-H01,louisiana,30.1255299,-90.44598465,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0056-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+84,CRMS0058-H01,louisiana,30.16553268,-90.5378363,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0058-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+85,CRMS0058-H02,louisiana,30.1655234,-90.53782902,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0058-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+86,CRMS0058-M01,louisiana,30.16650815,-90.53743082,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0058-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+87,CRMS0058-W01,louisiana,30.16561051,-90.53742041,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0058-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+88,CRMS0059-H01,louisiana,30.09624183,-90.5461879,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0059-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+89,CRMS0059-H02,louisiana,30.09311941,-90.54301667,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0059-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+90,CRMS0059-W01,louisiana,30.09313466,-90.54306972,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0059-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+91,CRMS0061-H01,louisiana,30.22037695,-90.63932001,"['244', '509']","['102R', '208R']","['051F', '104F']",CRMS0061-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+92,CRMS0063-H01,louisiana,30.12805249,-90.64078227,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0063-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+93,CRMS0065-H01,louisiana,30.12277874,-90.80990882,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0065-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+94,CRMS0065-H02,louisiana,30.12332726,-90.81020191,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0065-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+95,CRMS0065-W01,louisiana,30.12334512,-90.81019114,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0065-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+96,CRMS0086-H01,louisiana,30.31457611,-89.63558546,"['203', '522']","['208R', '101R']","['104F', '051F']",CRMS0086-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+97,CRMS0089-H01,louisiana,30.13158148,-90.58073574,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0089-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+98,CRMS0089-H02,louisiana,30.13161218,-90.58077242,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0089-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+99,CRMS0089-W01,louisiana,30.13157706,-90.58073761,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0089-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+100,CRMS0090-W01,louisiana,30.16091386,-90.56141667,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0090-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+101,CRMS0097-H01,louisiana,30.15433996,-90.65926962,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0097-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+102,CRMS0103-H01,louisiana,30.39613435,-90.25934111,"['203', '244', '509']","['208L', '101L', '208R']","['104F', '051F', '104F']",CRMS0103-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+103,CRMS0108-H01,louisiana,29.95275922,-89.41191476,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS0108-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+104,CRMS0114-H01,louisiana,29.75938323,-89.91574084,"['203', '244', '522']","['207L', '103L', '102R']","['104F', '052F', '051F']",CRMS0114-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+105,CRMS0114-W01,louisiana,29.75893312,-89.91673185,"['203', '244', '522']","['207L', '103L', '102R']","['104F', '052F', '051F']",CRMS0114-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+106,CRMS0115-H01,louisiana,29.78067165,-89.91881839,"['203', '244', '522']","['207L', '103L', '102R']","['104F', '052F', '051F']",CRMS0115-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+107,CRMS0115-M01,louisiana,29.78101964,-89.91874981,"['203', '244', '522']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0115-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+108,CRMS0115-W01,louisiana,29.78095726,-89.91684952,"['203', '244', '522']","['207L', '103L', '102R']","['104F', '052F', '051F']",CRMS0115-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+109,CRMS0117-H01,louisiana,29.80966819,-89.91727761,"['203', '244', '522']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0117-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+110,CRMS0117-W01,louisiana,29.80904014,-89.91780785,"['203', '244', '522']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0117-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+111,CRMS0118-H01,louisiana,29.37845166,-89.54209301,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0118-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+112,CRMS0119-H01,louisiana,29.47611943,-89.63551539,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0119-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+113,CRMS0120-H01,louisiana,29.84451836,-89.85648919,"['203', '244', '522']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0120-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+114,CRMS0120-W01,louisiana,29.84450046,-89.85650322,"['203', '244', '522']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0120-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+115,CRMS0121-H01,louisiana,29.6931826,-89.82056545,"['203', '244', '522']","['206L', '103L', '102R']","['103F', '052F', '051F']",CRMS0121-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+116,CRMS0125-H01,louisiana,29.76616518,-89.98094909,"['203', '244']","['207L', '103L']","['104F', '052F']",CRMS0125-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+117,CRMS0128-H01,louisiana,29.83121397,-89.94819795,"['203', '244', '522']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0128-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+118,CRMS0128-M01,louisiana,29.83159455,-89.94788641,"['203', '244', '522']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0128-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+119,CRMS0128-M100,louisiana,29.83164057,-89.94792639,"['203', '244', '522']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0128-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+120,CRMS0128-W01,louisiana,29.83159523,-89.94787658,"['203', '244', '522']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0128-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+121,CRMS0129-H01,louisiana,29.46879331,-89.60264832,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0129-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+122,CRMS0131-H01,louisiana,29.68827046,-89.88877078,"['203', '244', '522']","['206L', '103L', '102R']","['103F', '052F', '051F']",CRMS0131-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+123,CRMS0132-H01,louisiana,29.66416935,-89.88477899,"['203', '244', '522']","['206L', '103L', '102R']","['103F', '052F', '051F']",CRMS0132-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+124,CRMS0135-H01,louisiana,29.6864305,-89.76103081,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS0135-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+125,CRMS0136-H01,louisiana,29.62104348,-89.7913346,"['203', '522']","['206L', '102R']","['103F', '051F']",CRMS0136-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+126,CRMS0139-H01,louisiana,29.38278596,-89.47804121,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0139-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+127,CRMS0146-H01,louisiana,29.72901272,-89.72655347,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS0146-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+128,CRMS0147-H01,louisiana,29.66553143,-89.60467604,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS0147-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+129,CRMS0148-H01,louisiana,29.51247517,-89.69753727,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0148-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+130,CRMS0151-H01,louisiana,29.20753568,-89.13751372,"['481', '522']","['206L', '103L']","['103F', '052F']",CRMS0151-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+131,CRMS0153-H01,louisiana,29.11420201,-89.13681158,"['481', '522']","['205L', '104R']","['103F', '052F']",CRMS0153-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+132,CRMS0154-H01,louisiana,29.11596389,-89.19995506,"['481', '522']","['205L', '103R']","['103F', '052F']",CRMS0154-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+133,CRMS0156-H01,louisiana,29.16223999,-89.16988949,"['481', '522']","['205L', '103R']","['103F', '052F']",CRMS0156-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+134,CRMS0157-H01,louisiana,29.13183088,-89.22631132,"['481', '522']","['205L', '103R']","['103F', '052F']",CRMS0157-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+135,CRMS0159-H01,louisiana,29.0377574,-89.19905253,"['481', '522']","['205L', '104R']","['103F', '052F']",CRMS0159-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+136,CRMS0161-H01,louisiana,29.29369132,-89.16670593,"['481', '522']","['206L', '103R']","['103F', '052F']",CRMS0161-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+137,CRMS0162-H01,louisiana,29.16376987,-89.1345637,"['481', '522']","['205L', '103R']","['103F', '052F']",CRMS0162-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+138,CRMS0163-H01,louisiana,29.21672326,-89.42105609,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0163-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+139,CRMS0164-H01,louisiana,29.19444545,-90.17071582,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0164-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+140,CRMS0171-H01,louisiana,29.32312633,-89.79466956,"['203', '244', '522']","['206R', '103L', '103R']","['103F', '052F', '052F']",CRMS0171-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+141,CRMS0172-H01,louisiana,29.31451279,-89.73853926,"['203', '244', '522']","['206R', '103L', '103R']","['103F', '052F', '052F']",CRMS0172-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+142,CRMS0173-H01,louisiana,29.45323554,-89.73043313,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0173-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+143,CRMS0174-H01,louisiana,29.39727039,-89.7654907,"['203', '244', '522']","['206R', '103L', '103R']","['103F', '052F', '052F']",CRMS0174-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+144,CRMS0175-H01,louisiana,29.29008075,-90.14221404,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0175-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+145,CRMS0176-H01,louisiana,29.4088108,-89.79645068,"['203', '244', '522']","['206R', '103L', '103R']","['103F', '052F', '052F']",CRMS0176-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+146,CRMS0176-H0X,louisiana,29.39727039,-89.7654907,"['203', '244', '522']","['206R', '103L', '103R']","['103F', '052F', '052F']",CRMS0176-H0X,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+147,CRMS0178-H01,louisiana,29.28778884,-90.04584057,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0178-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+148,CRMS0179-H01,louisiana,29.39606172,-89.69833438,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0179-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+149,CRMS0181-H01,louisiana,29.3346805,-89.69706813,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0181-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+150,CRMS0184-W01,louisiana,29.80255397,-90.07168932,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0184-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+151,CRMS0185-H01,louisiana,29.79260711,-90.07720502,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0185-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+152,CRMS0188-H01,louisiana,29.79278907,-90.13483951,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0188-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+153,CRMS0188-M01,louisiana,29.79357426,-90.13558481,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0188-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+154,CRMS0188-M100,louisiana,29.79357471,-90.13560548,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0188-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+155,CRMS0189-H01,louisiana,29.80879029,-90.26460293,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0189-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+156,CRMS0189-M01,louisiana,29.80907254,-90.26376966,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0189-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+157,CRMS0189-M100,louisiana,29.80908177,-90.26377975,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0189-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+158,CRMS0190-H01,louisiana,29.53986257,-90.26473998,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0190-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+159,CRMS0190-M01,louisiana,29.52604052,-90.26156565,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0190-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+160,CRMS0190-W01,louisiana,29.5259667,-90.26148514,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0190-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+161,CRMS0192-H01,louisiana,29.86249214,-90.51793906,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0192-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+162,CRMS0192-M01,louisiana,29.85350738,-90.54168785,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0192-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+163,CRMS0192-M100,louisiana,29.85350738,-90.54168785,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0192-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+164,CRMS0192-W01,louisiana,29.85355208,-90.54166605,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0192-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+165,CRMS0194-W01,louisiana,29.99167676,-90.94045816,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0194-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+166,CRMS0197-W01,louisiana,29.91163766,-90.94584405,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0197-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+167,CRMS0200-W01,louisiana,29.96974776,-90.98200052,"['244', '509']","['102R', '207L']","['051F', '104F']",CRMS0200-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+168,CRMS0206-H01,louisiana,29.85058346,-90.66665588,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0206-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+169,CRMS0206-W01,louisiana,29.83886287,-90.66582263,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0206-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+170,CRMS0209-H01,louisiana,29.49006655,-89.79120033,"['203', '244', '522']","['206R', '103L', '103R']","['103F', '052F', '052F']",CRMS0209-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+171,CRMS0211-H01,louisiana,29.79217766,-90.46285048,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0211-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+172,CRMS0211-M01,louisiana,29.77713004,-90.47519709,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0211-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+173,CRMS0211-M100,louisiana,29.77714768,-90.47517597,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0211-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+174,CRMS0211-W01,louisiana,29.77714787,-90.4751863,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS0211-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+175,CRMS0217-H01,louisiana,29.91660272,-90.87727804,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0217-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+176,CRMS0218-H01,louisiana,29.76870994,-90.69949015,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0218-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+177,CRMS0218-W01,louisiana,29.76985667,-90.69962243,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0218-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+178,CRMS0219-M01,louisiana,29.80649558,-90.31887181,"['203', '244', '509']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0219-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+179,CRMS0219-M100,louisiana,29.8065308,-90.3188295,"['203', '244', '509']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0219-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+180,CRMS0219-W01,louisiana,29.80649761,-90.31884142,"['203', '244', '509']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0219-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+181,CRMS0220-H01,louisiana,29.56545907,-90.06865446,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0220-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+182,CRMS0220-H0X,louisiana,29.55518968,-90.07335913,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0220-H0X,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+183,CRMS0224-H01,louisiana,29.50030385,-89.91701857,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0224-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+184,CRMS0225-H01,louisiana,29.56266863,-90.0085189,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0225-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+185,CRMS0226-H01,louisiana,29.51254777,-89.88490098,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0226-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+186,CRMS0232-H01,louisiana,29.49771954,-90.01253763,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0232-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+187,CRMS0234-H01,louisiana,29.79650555,-90.10279164,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0234-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+188,CRMS0237-H01,louisiana,29.47552496,-89.94734322,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0237-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+189,CRMS0237-H02,louisiana,29.47706407,-89.9441767,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0237-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+190,CRMS0241-W01,louisiana,29.71298664,-90.50808503,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0241-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+191,CRMS0248-H01,louisiana,29.60256612,-90.07077044,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0248-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+192,CRMS0251-H01,louisiana,29.51862785,-90.01144419,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0251-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+193,CRMS0253-H01,louisiana,29.55518968,-90.07335913,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0253-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+194,CRMS0258-H01,louisiana,29.52402072,-89.81971745,"['203', '244', '522']","['206L', '103L', '103R']","['103F', '052F', '052F']",CRMS0258-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+195,CRMS0260-H01,louisiana,29.53430672,-89.85443337,"['203', '244', '522']","['206L', '103L', '103R']","['103F', '052F', '052F']",CRMS0260-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+196,CRMS0261-H01,louisiana,29.60199216,-90.1046548,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0261-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+197,CRMS0263-H01,louisiana,29.55292939,-89.88917769,"['203', '244', '522']","['206L', '103L', '103R']","['103F', '052F', '052F']",CRMS0263-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+198,CRMS0268-H01,louisiana,29.79736604,-90.6029159,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0268-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+199,CRMS0268-M01,louisiana,29.7971545,-90.60324397,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0268-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+200,CRMS0268-M100,louisiana,29.79724649,-90.60309375,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0268-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+201,CRMS0272-H01,louisiana,29.41998951,-89.69286609,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0272-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+202,CRMS0273-H01,louisiana,29.81765276,-90.32295227,"['203', '244', '509']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0273-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+203,CRMS0273-M01,louisiana,29.81726702,-90.3229596,"['203', '244', '509']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0273-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+204,CRMS0273-M100,louisiana,29.81730203,-90.32290695,"['203', '244', '509']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0273-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+205,CRMS0273-W01,louisiana,29.81728356,-90.32294625,"['203', '244', '509']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0273-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+206,CRMS0276-H01,louisiana,29.61946267,-89.94483744,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0276-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+207,CRMS0278-H01,louisiana,29.81017682,-90.22778441,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0278-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+208,CRMS0278-M01,louisiana,29.80989244,-90.228262,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0278-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+209,CRMS0278-M100,louisiana,29.8098036,-90.2283265,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS0278-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+210,CRMS0282-H01,louisiana,29.49882114,-89.76032679,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS0282-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+211,CRMS0287-H01,louisiana,29.68567463,-90.01424053,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0287-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+212,CRMS0287-M01,louisiana,29.68570227,-90.01465153,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0287-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+213,CRMS0287-M100,louisiana,29.68618414,-90.01482319,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0287-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+214,CRMS0290-H01,louisiana,29.47974205,-91.04326584,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS0290-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+215,CRMS0290-M01,louisiana,29.4796019,-91.04292041,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS0290-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+216,CRMS0290-M100,louisiana,29.47966296,-91.04308422,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS0290-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+217,CRMS0292-H01,louisiana,29.14135922,-90.22865476,"['203', '244']","['205L', '104L']","['103F', '052F']",CRMS0292-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+218,CRMS0293-H01,louisiana,29.23994501,-91.20127609,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0293-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+219,CRMS0294-H01,louisiana,29.41944007,-90.94940732,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0294-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+220,CRMS0294-M01,louisiana,29.41913292,-90.94912437,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0294-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+221,CRMS0294-M100,louisiana,29.41915098,-90.94912529,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0294-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+222,CRMS0296-H01,louisiana,29.42233329,-90.90214835,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0296-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+223,CRMS0296-M01,louisiana,29.41710186,-90.91679554,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0296-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+224,CRMS0296-M100,louisiana,29.41709707,-90.9167776,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0296-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+225,CRMS0296-W01,louisiana,29.4170795,-90.91680823,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0296-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+226,CRMS0301-H01,louisiana,29.50643586,-91.22648439,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0301-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+227,CRMS0301-M01,louisiana,29.50607626,-91.22735506,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0301-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+228,CRMS0301-M100,louisiana,29.50606793,-91.22740678,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0301-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+229,CRMS0302-H01,louisiana,29.14719995,-90.91296197,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0302-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+230,CRMS0303-H01,louisiana,29.24119111,-91.06896984,"['509', '550']","['206R', '103L']","['103F', '052F']",CRMS0303-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+231,CRMS0305-H01,louisiana,29.38954076,-91.19807003,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0305-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+232,CRMS0307-H01,louisiana,29.2533721,-90.82704092,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0307-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+233,CRMS0309-H01,louisiana,29.25339077,-91.19611785,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0309-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+234,CRMS0310-H01,louisiana,29.29491728,-90.29321214,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0310-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+235,CRMS0311-H01,louisiana,29.21429372,-90.7922619,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0311-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+236,CRMS0312-H01,louisiana,29.50503278,-90.38529048,"['203', '244', '509']","['206L', '103L', '206R']","['103F', '052F', '103F']",CRMS0312-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+237,CRMS0312-H02,louisiana,29.50860677,-90.38617154,"['203', '244', '509']","['206L', '103L', '206R']","['103F', '052F', '103F']",CRMS0312-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+238,CRMS0312-M01,louisiana,29.50510079,-90.3855192,"['203', '244', '509']","['206L', '103L', '206R']","['103F', '052F', '103F']",CRMS0312-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+239,CRMS0315-H01,louisiana,29.40179426,-90.57179769,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0315-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+240,CRMS0318-H01,louisiana,29.29425278,-90.32487519,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0318-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+241,CRMS0319-H01,louisiana,29.3245113,-90.32566546,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0319-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+242,CRMS0322-H01,louisiana,29.24471564,-91.10724986,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0322-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+243,CRMS0324-H01,louisiana,29.99059379,-91.23307254,"['509', '550']","['207L', '102L']","['104F', '051F']",CRMS0324-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+244,CRMS0326-H01,louisiana,29.27427498,-91.07448077,"['509', '550']","['206R', '103L']","['103F', '052F']",CRMS0326-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+245,CRMS0327-H01,louisiana,29.44511876,-91.06824475,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS0327-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+246,CRMS0327-M01,louisiana,29.44511185,-91.06863261,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS0327-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+247,CRMS0327-M100,louisiana,29.44511726,-91.06853908,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS0327-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+248,CRMS0329-H01,louisiana,29.47983488,-91.10526726,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS0329-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+249,CRMS0329-M01,louisiana,29.47971861,-91.10497282,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS0329-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+250,CRMS0329-M100,louisiana,29.47977428,-91.1049845,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS0329-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+251,CRMS0331-H01,louisiana,29.58265027,-90.54394299,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0331-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+252,CRMS0331-M01,louisiana,29.58287372,-90.54350959,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0331-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+253,CRMS0331-M100,louisiana,29.58282077,-90.54357279,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0331-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+254,CRMS0332-H01,louisiana,29.29824549,-91.03920183,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS0332-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+255,CRMS0335-H01,louisiana,29.2637385,-90.38727017,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0335-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+256,CRMS0335-W01,louisiana,29.2691272,-90.38675035,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0335-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+257,CRMS0336-H01,louisiana,29.32018951,-90.38317658,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0336-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+258,CRMS0337-H01,louisiana,29.31138505,-90.3558536,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0337-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+259,CRMS0338-H01,louisiana,29.33444927,-90.41479757,"['203', '244', '509']","['206L', '103R', '206R']","['103F', '052F', '103F']",CRMS0338-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+260,CRMS0341-H01,louisiana,29.30936819,-90.51271929,"['203', '244', '509']","['206L', '103R', '206R']","['103F', '052F', '103F']",CRMS0341-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+261,CRMS0345-H01,louisiana,29.17052942,-90.76241825,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0345-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+262,CRMS0347-H01,louisiana,29.1613911,-90.70070984,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0347-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+263,CRMS0354-H01,louisiana,29.33187118,-91.00865491,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS0354-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+264,CRMS0355-H01,louisiana,29.29830159,-90.54054135,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0355-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+265,CRMS0355-W01,louisiana,29.29685367,-90.54090246,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0355-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+266,CRMS0365-H01,louisiana,29.47031584,-91.19864104,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0365-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+267,CRMS0365-M01,louisiana,29.47062979,-91.19901773,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0365-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+268,CRMS0365-M100,louisiana,29.47054919,-91.19889542,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0365-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+269,CRMS0367-H01,louisiana,29.63077473,-90.57236693,"['244', '509']","['103R', '207R']","['052F', '104F']",CRMS0367-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+270,CRMS0367-M01,louisiana,29.63031632,-90.57299415,"['244', '509']","['103R', '207R']","['052F', '104F']",CRMS0367-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+271,CRMS0367-M02,louisiana,29.63019834,-90.57295568,"['244', '509']","['103R', '207R']","['052F', '104F']",CRMS0367-M02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+272,CRMS0367-M100,louisiana,29.63028927,-90.5729948,"['244', '509']","['103R', '207R']","['052F', '104F']",CRMS0367-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+273,CRMS0369-H01,louisiana,29.29458046,-90.69504015,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0369-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+274,CRMS0371-H01,louisiana,29.4273411,-91.07055683,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS0371-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+275,CRMS0371-M01,louisiana,29.42698955,-91.07095389,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS0371-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+276,CRMS0371-M100,louisiana,29.42697136,-91.07094393,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS0371-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+277,CRMS0374-H01,louisiana,29.1565534,-90.79343931,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0374-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+278,CRMS0376-H01,louisiana,29.12359487,-90.85722442,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0376-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+279,CRMS0377-H01,louisiana,29.2324646,-91.00663483,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS0377-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+280,CRMS0381-H01,louisiana,29.44737842,-90.85473253,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0381-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+281,CRMS0381-M01,louisiana,29.44696934,-90.85427852,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0381-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+282,CRMS0381-M100,louisiana,29.44715874,-90.85427454,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0381-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+283,CRMS0382-H01,louisiana,29.43410247,-90.8541923,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0382-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+284,CRMS0382-M01,louisiana,29.43378724,-90.85422604,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0382-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+285,CRMS0382-M100,louisiana,29.43384152,-90.8542352,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0382-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+286,CRMS0383-H01,louisiana,29.20781409,-90.9479309,"['244', '509', '550']","['103R', '206R', '104L']","['052F', '103F', '052F']",CRMS0383-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+287,CRMS0385-H01,louisiana,29.40903065,-90.60324004,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0385-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+288,CRMS0385-W01,louisiana,29.41025163,-90.6031587,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0385-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+289,CRMS0386-H01,louisiana,29.43337367,-90.35506344,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0386-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+290,CRMS0387-H01,louisiana,29.41119835,-90.32098938,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0387-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+291,CRMS0390-H01,louisiana,29.46555552,-90.6633755,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0390-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+292,CRMS0392-H01,louisiana,29.45460791,-90.66736553,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0392-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+293,CRMS0394-H01,louisiana,29.35926391,-90.85509625,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0394-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+294,CRMS0394-M01,louisiana,29.3589876,-90.85426313,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0394-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+295,CRMS0395-H01,louisiana,29.36058025,-90.88645285,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0395-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+296,CRMS0395-M01,louisiana,29.35969664,-90.88551632,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0395-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+297,CRMS0396-H01,louisiana,29.34274566,-90.88578278,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0396-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+298,CRMS0396-M01,louisiana,29.34271287,-90.88555821,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0396-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+299,CRMS0397-H01,louisiana,29.35219739,-90.26088574,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0397-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+300,CRMS0398-H01,louisiana,29.38948374,-90.91853864,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0398-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+301,CRMS0398-W01,louisiana,29.38624178,-90.91727605,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0398-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+302,CRMS0399-H01,louisiana,29.30009482,-91.1054803,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0399-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+303,CRMS0400-H01,louisiana,29.48979341,-90.50844745,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0400-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+304,CRMS0403-H01,louisiana,29.75715179,-91.14244491,"['244', '509', '550']","['102R', '207L', '103L']","['051F', '104F', '052F']",CRMS0403-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+305,CRMS0403-W01,louisiana,29.76724186,-91.13743307,"['244', '509', '550']","['102R', '207L', '103L']","['051F', '104F', '052F']",CRMS0403-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+306,CRMS0409-H01,louisiana,29.47888896,-90.9200266,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0409-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+307,CRMS0409-M01,louisiana,29.47873704,-90.91979698,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0409-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+308,CRMS0409-M100,louisiana,29.47875653,-90.91974502,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0409-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+309,CRMS0411-H01,louisiana,29.49794364,-90.95129554,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0411-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+310,CRMS0411-M01,louisiana,29.4977877,-90.9510417,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0411-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+311,CRMS0411-M100,louisiana,29.49787524,-90.95116048,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0411-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+312,CRMS0414-H01,louisiana,29.69903834,-90.9434019,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0414-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+313,CRMS0414-W01,louisiana,29.70026553,-90.94362995,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS0414-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+314,CRMS0416-H01,louisiana,29.4758289,-90.48113287,"['203', '244', '509']","['206L', '103R', '206R']","['103F', '052F', '103F']",CRMS0416-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+315,CRMS0421-H01,louisiana,29.17187839,-90.8243322,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0421-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+316,CRMS0434-H01,louisiana,29.32038939,-90.73313434,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS0434-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+317,CRMS0461-H01,louisiana,29.58469486,-91.3260749,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0461-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+318,CRMS0463-H01,louisiana,29.49072166,-91.32332139,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0463-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+319,CRMS0463-M01,louisiana,29.4905616,-91.3230571,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0463-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+320,CRMS0464-H01,louisiana,29.51757028,-91.38713632,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0464-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+321,CRMS0464-M01,louisiana,29.51799206,-91.3857116,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0464-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+322,CRMS0465-H01,louisiana,29.53705179,-91.38444646,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0465-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+323,CRMS0465-M01,louisiana,29.53759273,-91.38437873,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0465-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+324,CRMS0479-H01,louisiana,29.52354268,-91.44918281,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0479-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+325,CRMS0482-H01,louisiana,29.5858703,-91.35408342,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0482-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+326,CRMS0484-H01,louisiana,29.48940753,-91.44956445,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0484-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+327,CRMS0488-H01,louisiana,29.70733957,-91.54086426,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0488-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+328,CRMS0488-H02,louisiana,29.70680496,-91.54126664,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0488-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+329,CRMS0489-H01,louisiana,29.60131691,-91.54183618,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0489-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+330,CRMS0490-H01,louisiana,29.69004992,-91.51784251,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0490-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+331,CRMS0490-W01,louisiana,29.67934654,-91.51046647,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0490-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+332,CRMS0493-H01,louisiana,29.75572215,-91.75830879,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0493-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+333,CRMS0493-H02,louisiana,29.75523812,-91.76115111,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0493-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+334,CRMS0494-H01,louisiana,29.74263556,-91.79554042,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0494-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+335,CRMS0494-H02,louisiana,29.74074036,-91.78883465,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0494-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+336,CRMS0496-H01,louisiana,29.62921077,-91.54740047,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0496-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+337,CRMS0496-H02,louisiana,29.629697,-91.55025972,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0496-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+338,CRMS0498-H01,louisiana,29.50129732,-91.84962769,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0498-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+339,CRMS0498-H02,louisiana,29.49869805,-91.8396526,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0498-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+340,CRMS0499-H01,louisiana,29.57079966,-91.85497974,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0499-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+341,CRMS0501-H01,louisiana,29.63937953,-92.25677022,"['231', '550']","['206L', '102R']","['103F', '051F']",CRMS0501-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+342,CRMS0504-H01,louisiana,29.53674075,-91.88616132,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0504-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+343,CRMS0507-H01,louisiana,29.58283371,-92.2250461,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0507-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+344,CRMS0508-H01,louisiana,29.63998695,-92.22652869,"['231', '550']","['206R', '102R']","['103F', '051F']",CRMS0508-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+345,CRMS0508-H02,louisiana,29.63472714,-92.2206443,"['231', '550']","['206R', '102R']","['103F', '051F']",CRMS0508-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+346,CRMS0511-H01,louisiana,29.88658202,-91.97964741,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0511-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+347,CRMS0511-H02,louisiana,29.88161839,-91.9795944,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0511-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+348,CRMS0511-W01,louisiana,29.88704928,-91.97822391,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0511-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+349,CRMS0513-H01,louisiana,29.79267329,-91.60424417,"['231', '509', '550']","['207R', '207L', '102L']","['104F', '104F', '051F']",CRMS0513-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+350,CRMS0514-H01,louisiana,29.85266419,-91.82543771,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0514-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+351,CRMS0514-H02,louisiana,29.85244471,-91.82963095,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0514-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+352,CRMS0517-H01,louisiana,29.64272051,-91.57242426,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0517-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+353,CRMS0520-H01,louisiana,29.58489343,-91.88534871,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0520-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+354,CRMS0522-H01,louisiana,29.49971763,-91.83138829,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0522-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+355,CRMS0522-W01,louisiana,29.49803342,-91.82357803,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0522-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+356,CRMS0523-H01,louisiana,29.57876722,-91.8212396,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0523-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+357,CRMS0524-H01,louisiana,29.55697786,-91.81927282,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0524-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+358,CRMS0524-W01,louisiana,29.54855562,-91.82304493,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0524-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+359,CRMS0527-H01,louisiana,29.71160115,-91.85904811,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0527-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+360,CRMS0527-H02,louisiana,29.71162138,-91.8590861,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0527-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+361,CRMS0527-H03,louisiana,29.7090107,-91.85981855,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0527-H03,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+362,CRMS0528-H01,louisiana,29.82796465,-91.91454947,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0528-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+363,CRMS0529-H01,louisiana,29.59976671,-91.91746079,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0529-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+364,CRMS0529-H02,louisiana,29.59723784,-91.92141197,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0529-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+365,CRMS0530-H01,louisiana,29.58201126,-92.01759137,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0530-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+366,CRMS0530-W01,louisiana,29.57773536,-92.0105298,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0530-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+367,CRMS0531-H01,louisiana,29.85606472,-91.95099897,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0531-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+368,CRMS0532-H01,louisiana,29.82511521,-91.94862847,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0532-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+369,CRMS0535-H01,louisiana,29.64232683,-92.16618616,"['231', '550']","['206R', '102R']","['103F', '051F']",CRMS0535-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+370,CRMS0536-H01,louisiana,29.58210252,-92.25980847,"['231', '272', '550']","['206R', '103L', '103R']","['103F', '052F', '052F']",CRMS0536-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+371,CRMS0536-W01,louisiana,29.58493148,-92.26056221,"['231', '272', '550']","['206R', '103L', '103R']","['103F', '052F', '052F']",CRMS0536-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+372,CRMS0541-H01,louisiana,29.61722744,-92.03987242,"['231', '550']","['206R', '103R']","['103F', '052F']",CRMS0541-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+373,CRMS0542-H01,louisiana,29.80488005,-91.63341877,"['231', '509', '550']","['207R', '207L', '102L']","['104F', '104F', '051F']",CRMS0542-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+374,CRMS0542-M01,louisiana,29.80271221,-91.63560089,"['231', '509', '550']","['207R', '207L', '102L']","['104F', '104F', '051F']",CRMS0542-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+375,CRMS0542-W01,louisiana,29.80269396,-91.63558045,"['231', '509', '550']","['207R', '207L', '102L']","['104F', '104F', '051F']",CRMS0542-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+376,CRMS0543-H01,louisiana,29.75236132,-91.63479964,"['231', '509', '550']","['207R', '206L', '102L']","['104F', '103F', '051F']",CRMS0543-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+377,CRMS0543-H02,louisiana,29.75089388,-91.63601376,"['231', '509', '550']","['207R', '206L', '102L']","['104F', '103F', '051F']",CRMS0543-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+378,CRMS0544-H01,louisiana,29.68677739,-91.57612189,"['231', '509', '550']","['207R', '206L', '103L']","['104F', '103F', '052F']",CRMS0544-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+379,CRMS0544-H02,louisiana,29.68677291,-91.57611408,"['231', '509', '550']","['207R', '206L', '103L']","['104F', '103F', '052F']",CRMS0544-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+380,CRMS0545-H01,louisiana,29.71218964,-91.6015011,"['231', '509', '550']","['207R', '206L', '102L']","['104F', '103F', '051F']",CRMS0545-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+381,CRMS0547-H01,louisiana,29.83859355,-91.70217418,"['231', '550']","['207R', '102L']","['104F', '051F']",CRMS0547-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+382,CRMS0549-H01,louisiana,29.83198206,-91.85688819,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0549-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+383,CRMS0549-H02,louisiana,29.83232874,-91.84894033,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0549-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+384,CRMS0549-H03,louisiana,29.83380481,-91.84953406,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0549-H03,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+385,CRMS0550-H01,louisiana,29.76547814,-91.69700334,"['231', '550']","['207R', '102L']","['104F', '051F']",CRMS0550-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+386,CRMS0551-H01,louisiana,29.70193206,-91.54000338,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS0551-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+387,CRMS0552-H01,louisiana,29.7953582,-92.13552903,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0552-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+388,CRMS0552-H02,louisiana,29.7971587,-92.13615893,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS0552-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+389,CRMS0553-H01,louisiana,29.85000591,-93.00573725,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0553-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+390,CRMS0553-H02,louisiana,29.84961789,-93.00561119,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0553-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+391,CRMS0554-H01,louisiana,29.82978708,-92.66481732,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS0554-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+392,CRMS0556-H01,louisiana,29.91529846,-92.78717652,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0556-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+393,CRMS0557-H01,louisiana,29.94133769,-92.66730801,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS0557-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+394,CRMS0560-H01,louisiana,29.85067158,-92.54176995,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS0560-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+395,CRMS0562-H01,louisiana,29.76587205,-92.7615775,"['231', '272']","['206L', '102L']","['103F', '051F']",CRMS0562-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+396,CRMS0565-H01,louisiana,29.79887614,-92.45079595,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS0565-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+397,CRMS0567-H01,louisiana,29.90266791,-92.45110879,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS0567-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+398,CRMS0568-H01,louisiana,29.78446251,-92.41630443,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS0568-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+399,CRMS0570-H01,louisiana,29.80061186,-92.38919069,"['231', '272', '550']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0570-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+400,CRMS0570-H02,louisiana,29.79793397,-92.38823562,"['231', '272', '550']","['207L', '102L', '102R']","['104F', '051F', '051F']",CRMS0570-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+401,CRMS0571-H01,louisiana,29.70955679,-92.29266948,"['231', '272', '550']","['207L', '103L', '102R']","['104F', '052F', '051F']",CRMS0571-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+402,CRMS0572-H01,louisiana,29.7889735,-92.28910755,"['231', '550']","['207L', '102R']","['104F', '051F']",CRMS0572-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+403,CRMS0574-H01,louisiana,29.79597528,-92.63487233,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS0574-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+404,CRMS0574-H02,louisiana,29.79622195,-92.63264321,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS0574-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+405,CRMS0575-H01,louisiana,29.93194763,-92.94956657,"['272', '537']","['102L', '207R']","['051F', '104F']",CRMS0575-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+406,CRMS0575-W01,louisiana,29.94056825,-92.94799239,"['272', '537']","['102L', '207R']","['051F', '104F']",CRMS0575-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+407,CRMS0576-H01,louisiana,29.5913758,-92.48056452,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0576-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+408,CRMS0580-H01,louisiana,29.60658139,-92.32309397,"['231', '272', '550']","['206L', '103L', '102R']","['103F', '052F', '051F']",CRMS0580-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+409,CRMS0580-H02,louisiana,29.60530608,-92.32780948,"['231', '272', '550']","['206L', '103L', '102R']","['103F', '052F', '051F']",CRMS0580-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+410,CRMS0581-H01,louisiana,29.66521957,-92.72816687,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0581-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+411,CRMS0583-H01,louisiana,29.83975918,-92.91694156,"['272', '537']","['102L', '207R']","['051F', '104F']",CRMS0583-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+412,CRMS0584-H01,louisiana,29.79307468,-92.85669759,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0584-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+413,CRMS0584-H02,louisiana,29.79693593,-92.85804527,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0584-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+414,CRMS0584-H03,louisiana,29.79469237,-92.84520773,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0584-H03,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+415,CRMS0587-H01,louisiana,29.79778664,-92.91262158,"['272', '537']","['102L', '207R']","['051F', '104F']",CRMS0587-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+416,CRMS0587-H02,louisiana,29.79777915,-92.91522376,"['272', '537']","['102L', '207R']","['051F', '104F']",CRMS0587-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+417,CRMS0588-H01,louisiana,29.77327315,-92.82291923,"['231', '272', '537']","['206L', '102L', '207R']","['103F', '051F', '104F']",CRMS0588-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+418,CRMS0588-H02,louisiana,29.77341812,-92.82165415,"['231', '272', '537']","['206L', '102L', '207R']","['103F', '051F', '104F']",CRMS0588-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+419,CRMS0589-H01,louisiana,29.65696192,-92.81659008,"['231', '272', '537']","['206L', '103L', '207R']","['103F', '052F', '104F']",CRMS0589-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+420,CRMS0589-W01,louisiana,29.6647954,-92.82303445,"['231', '272', '537']","['206L', '103L', '207R']","['103F', '052F', '104F']",CRMS0589-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+421,CRMS0590-H01,louisiana,29.93320693,-92.82755145,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0590-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+422,CRMS0593-H01,louisiana,29.99316174,-92.76101479,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0593-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+423,CRMS0593-H02,louisiana,29.99317392,-92.76101667,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0593-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+424,CRMS0595-H01,louisiana,29.85370635,-92.63743076,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS0595-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+425,CRMS0599-H01,louisiana,29.61003843,-92.66320731,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0599-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+426,CRMS0599-H02,louisiana,29.60980264,-92.66305543,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0599-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+427,CRMS0600-H01,louisiana,29.57683854,-92.5348395,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0600-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+428,CRMS0600-W01,louisiana,29.57763533,-92.54183623,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0600-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+429,CRMS0603-H01,louisiana,29.80181949,-92.76010542,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS0603-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+430,CRMS0604-H01,louisiana,29.75784775,-92.75606505,"['231', '272']","['206L', '102L']","['103F', '051F']",CRMS0604-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+431,CRMS0604-H02,louisiana,29.75832774,-92.7536188,"['231', '272']","['206L', '102L']","['103F', '051F']",CRMS0604-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+432,CRMS0605-H01,louisiana,29.86040467,-92.91566504,"['272', '537']","['102L', '207R']","['051F', '104F']",CRMS0605-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+433,CRMS0605-H02,louisiana,29.86042048,-92.91509839,"['272', '537']","['102L', '207R']","['051F', '104F']",CRMS0605-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+434,CRMS0608-H01,louisiana,29.67626177,-92.67124941,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0608-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+435,CRMS0608-W01,louisiana,29.67201247,-92.66676499,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0608-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+436,CRMS0609-H01,louisiana,29.63979658,-92.60404539,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0609-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+437,CRMS0610-H01,louisiana,29.6133258,-92.6402799,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0610-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+438,CRMS0610-W01,louisiana,29.60669751,-92.63554235,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0610-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+439,CRMS0614-H01,louisiana,29.73706174,-92.88540576,"['231', '272', '537']","['206L', '102L', '207R']","['103F', '051F', '104F']",CRMS0614-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+440,CRMS0615-H01,louisiana,29.68321903,-92.826319,"['231', '272', '537']","['206L', '103L', '207R']","['103F', '052F', '104F']",CRMS0615-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+441,CRMS0616-H01,louisiana,29.73086247,-92.26123954,"['231', '550']","['207L', '102R']","['104F', '051F']",CRMS0616-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+442,CRMS0618-H01,louisiana,29.73561896,-92.25827227,"['231', '550']","['207L', '102R']","['104F', '051F']",CRMS0618-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+443,CRMS0619-H01,louisiana,29.68674785,-92.26169009,"['231', '550']","['206L', '102R']","['103F', '051F']",CRMS0619-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+444,CRMS0622-H01,louisiana,29.79721036,-92.99062531,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0622-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+445,CRMS0622-W01,louisiana,29.80990708,-92.97931305,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0622-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+446,CRMS0623-H01,louisiana,29.63577723,-92.5084692,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0623-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+447,CRMS0624-H01,louisiana,29.85990944,-92.88635443,"['272', '537']","['102L', '207R']","['051F', '104F']",CRMS0624-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+448,CRMS0624-H02,louisiana,29.85877471,-92.89776773,"['272', '537']","['102L', '207R']","['051F', '104F']",CRMS0624-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+449,CRMS0626-H01,louisiana,29.69359397,-92.60363772,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0626-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+450,CRMS0626-W01,louisiana,29.69372643,-92.60439459,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0626-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+451,CRMS0630-H01,louisiana,29.78277395,-92.7941697,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0630-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+452,CRMS0630-H02,louisiana,29.78279124,-92.79422109,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS0630-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+453,CRMS0632-H01,louisiana,29.56841189,-92.38576586,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0632-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+454,CRMS0632-H02,louisiana,29.56860489,-92.38424413,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS0632-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+455,CRMS0633-H01,louisiana,29.56390003,-92.32312108,"['231', '272', '550']","['206L', '103L', '103R']","['103F', '052F', '052F']",CRMS0633-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+456,CRMS0635-H01,louisiana,29.91875763,-93.47963811,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0635-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+457,CRMS0635-H02,louisiana,29.91301978,-93.47226711,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0635-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+458,CRMS0635-W01,louisiana,29.91882413,-93.4793391,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0635-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+459,CRMS0638-H01,louisiana,29.86903895,-93.51177126,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0638-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+460,CRMS0638-W01,louisiana,29.86798898,-93.51052163,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0638-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+461,CRMS0639-H01,louisiana,29.87865864,-93.47099707,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0639-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+462,CRMS0639-W01,louisiana,29.88974672,-93.4793967,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0639-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+463,CRMS0641-H01,louisiana,29.89630511,-93.51059597,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0641-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+464,CRMS0641-H02,louisiana,29.8946126,-93.51024299,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0641-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+465,CRMS0642-H01,louisiana,29.87283437,-93.46431146,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0642-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+466,CRMS0642-W01,louisiana,29.86794351,-93.47932348,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0642-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+467,CRMS0644-H01,louisiana,29.83217042,-93.29210194,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0644-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+468,CRMS0644-W01,louisiana,29.83169502,-93.29283648,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0644-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+469,CRMS0645-H01,louisiana,29.84668857,-93.19913819,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0645-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+470,CRMS0647-H01,louisiana,29.84891431,-93.47578519,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0647-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+471,CRMS0647-W01,louisiana,29.84627533,-93.47932348,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0647-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+472,CRMS0648-H01,louisiana,29.83976013,-93.17011173,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0648-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+473,CRMS0648-W01,louisiana,29.83800339,-93.16888531,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0648-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+474,CRMS0650-H01,louisiana,29.92117862,-93.13305317,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0650-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+475,CRMS0650-W01,louisiana,29.91879538,-93.13556947,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0650-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+476,CRMS0651-H01,louisiana,29.9642824,-93.51425185,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0651-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+477,CRMS0651-W01,louisiana,29.96233112,-93.51064036,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0651-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+478,CRMS0655-H01,louisiana,29.79919598,-93.41588244,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0655-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+479,CRMS0656-H01,louisiana,30.01948537,-93.26919283,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0656-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+480,CRMS0656-W01,louisiana,30.02040522,-93.26054642,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0656-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+481,CRMS0658-H01,louisiana,30.05505639,-93.60463357,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS0658-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+482,CRMS0660-H01,louisiana,29.9186289,-93.66662472,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS0660-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+483,CRMS0661-H01,louisiana,29.84622047,-93.63228066,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS0661-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+484,CRMS0662-H01,louisiana,30.03500278,-93.6938285,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS0662-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+485,CRMS0663-H01,louisiana,30.0117076,-93.69720045,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS0663-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+486,CRMS0663-W01,louisiana,30.0131334,-93.69909498,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS0663-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+487,CRMS0665-H01,louisiana,29.95870392,-93.69437923,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS0665-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+488,CRMS0665-H02,louisiana,29.9540924,-93.68373727,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS0665-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+489,CRMS0669-H01,louisiana,29.88119172,-93.7273014,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS0669-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+490,CRMS0672-H01,louisiana,29.83338282,-93.41562942,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0672-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+491,CRMS0672-W01,louisiana,29.83174133,-93.41672529,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0672-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+492,CRMS0677-H01,louisiana,29.85748934,-93.53532103,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0677-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+493,CRMS0677-W01,louisiana,29.85357872,-93.54171414,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS0677-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+494,CRMS0680-H01,louisiana,29.77360894,-93.51327438,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0680-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+495,CRMS0682-H01,louisiana,29.82361203,-93.5751984,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS0682-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+496,CRMS0683-H01,louisiana,29.89055184,-93.66609996,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS0683-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+497,CRMS0684-H01,louisiana,29.81867227,-93.82501755,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS0684-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+498,CRMS0685-H01,louisiana,29.88901642,-93.38679533,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0685-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+499,CRMS0687-H01,louisiana,29.9391771,-93.35791545,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0687-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+500,CRMS0691-H01,louisiana,29.96265709,-93.10520295,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0691-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+501,CRMS0691-W01,louisiana,29.96244004,-93.10440072,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS0691-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+502,CRMS0693-H01,louisiana,29.89771531,-93.63533283,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS0693-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+503,CRMS0693-H02,louisiana,29.87927062,-93.62752424,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS0693-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+504,CRMS0694-H01,louisiana,29.88275576,-93.54318454,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0694-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+505,CRMS0694-H02,louisiana,29.87880984,-93.54210934,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS0694-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+506,CRMS0694-H03,louisiana,29.87887274,-93.5465522,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS0694-H03,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+507,CRMS0697-H01,louisiana,30.06228827,-93.66921275,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS0697-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+508,CRMS0978-H01,louisiana,29.32319359,-90.29288339,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS0978-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+509,CRMS1024-H01,louisiana,29.87487344,-89.37860692,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS1024-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+510,CRMS1069-H01,louisiana,30.0459606,-89.22139038,"['203', '522']","['207R', '102L']","['104F', '051F']",CRMS1069-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+511,CRMS1100-H01,louisiana,29.65838704,-92.44915836,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS1100-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+512,CRMS1130-H01,louisiana,29.7009719,-92.38553869,"['231', '272', '550']","['206L', '103L', '102R']","['103F', '052F', '051F']",CRMS1130-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+513,CRMS1205-H01,louisiana,29.87499094,-93.57543447,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS1205-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+514,CRMS1277-H01,louisiana,29.82396761,-92.4778046,"['231', '272']","['207L', '102L']","['104F', '051F']",CRMS1277-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+515,CRMS1409-H01,louisiana,29.86884441,-93.01030745,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS1409-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+516,CRMS1409-H0X,louisiana,29.84961789,-93.00561119,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS1409-H0X,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+517,CRMS1413-H01,louisiana,29.89647427,-93.01053366,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS1413-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+518,CRMS1413-W01,louisiana,29.8970699,-93.01055444,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS1413-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+519,CRMS1446-H01,louisiana,29.92686569,-92.82876505,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS1446-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+520,CRMS1446-H0X,louisiana,29.93320693,-92.82755145,"['231', '272', '537']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS1446-H0X,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+521,CRMS1650-H01,louisiana,29.8106689,-92.04153918,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS1650-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+522,CRMS1738-H01,louisiana,29.85389568,-93.22934923,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS1738-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+523,CRMS1743-H01,louisiana,29.89052512,-93.23098716,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS1743-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+524,CRMS1838-H01,louisiana,29.78620437,-93.69474037,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS1838-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+525,CRMS1838-W01,louisiana,29.7854331,-93.69605824,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS1838-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+526,CRMS1858-H01,louisiana,29.8361021,-93.51216717,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS1858-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+527,CRMS1858-W01,louisiana,29.8390016,-93.51059154,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS1858-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+528,CRMS1965-H01,louisiana,29.63401253,-92.48387923,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS1965-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+529,CRMS1965-H02,louisiana,29.63401826,-92.48388583,"['231', '272']","['206L', '103L']","['103F', '052F']",CRMS1965-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+530,CRMS2041-H01,louisiana,29.77054848,-92.16341639,"['231', '550']","['207R', '102R']","['104F', '051F']",CRMS2041-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+531,CRMS2154-H01,louisiana,29.84503683,-93.69400971,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS2154-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+532,CRMS2154-H0X,louisiana,29.84622047,-93.63228066,"['272', '537', '578']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS2154-H0X,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+533,CRMS2154-W01,louisiana,29.84620804,-93.69704873,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS2154-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+534,CRMS2156-H01,louisiana,29.87535967,-93.69843943,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS2156-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+535,CRMS2156-H0X,louisiana,29.88119172,-93.7273014,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS2156-H0X,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+536,CRMS2166-H01,louisiana,29.98003283,-93.70175454,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS2166-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+537,CRMS2166-W01,louisiana,29.98228152,-93.69804892,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS2166-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+538,CRMS2189-H01,louisiana,29.93005198,-93.75782081,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS2189-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+539,CRMS2189-H02,louisiana,29.93006,-93.757817,"['537', '578']","['207L', '102L']","['104F', '051F']",CRMS2189-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+540,CRMS2219-H01,louisiana,29.7675582,-93.60113544,"['272', '537', '578']","['102R', '207L', '103L']","['051F', '104F', '052F']",CRMS2219-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+541,CRMS2334-H01,louisiana,29.88220397,-93.51093099,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS2334-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+542,CRMS2418-H01,louisiana,29.87257835,-93.16800411,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS2418-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+543,CRMS2493-H01,louisiana,29.82583895,-92.88752805,"['272', '537']","['102L', '207R']","['051F', '104F']",CRMS2493-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+544,CRMS2568-H01,louisiana,29.56386536,-91.35428846,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS2568-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+545,CRMS2608-H01,louisiana,29.22831857,-89.31787559,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS2608-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+546,CRMS2614-H01,louisiana,29.34130889,-89.32418347,"['203', '522']","['206R', '103R']","['103F', '052F']",CRMS2614-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+547,CRMS2627-H01,louisiana,29.2327595,-89.1852261,"['481', '522']","['206L', '103R']","['103F', '052F']",CRMS2627-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+548,CRMS2634-H01,louisiana,29.23069171,-89.25967077,"['203', '481', '522']","['206R', '206L', '103R']","['103F', '103F', '052F']",CRMS2634-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+549,CRMS2785-H01,louisiana,29.50334047,-91.03991289,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS2785-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+550,CRMS2785-M01,louisiana,29.5041155,-91.04072651,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS2785-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+551,CRMS2785-M100,louisiana,29.50371776,-91.04006374,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS2785-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+552,CRMS2825-H01,louisiana,29.49781057,-90.44399907,"['203', '244', '509']","['206L', '103R', '206R']","['103F', '052F', '103F']",CRMS2825-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+553,CRMS2830-H01,louisiana,30.04009515,-90.3450304,"['203', '244', '509']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS2830-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+554,CRMS2854-H01,louisiana,30.30063405,-89.98326444,"['203', '244', '522']","['207L', '102L', '101R']","['104F', '051F', '051F']",CRMS2854-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+555,CRMS2862-H01,louisiana,29.54970065,-91.07732779,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS2862-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+556,CRMS2862-M01,louisiana,29.54949504,-91.07751567,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS2862-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+557,CRMS2862-M100,louisiana,29.54953865,-91.07741165,"['244', '509', '550']","['103R', '206L', '103L']","['052F', '103F', '052F']",CRMS2862-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+558,CRMS2881-H01,louisiana,29.47247346,-91.01201707,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS2881-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+559,CRMS2881-H0X,louisiana,29.49794364,-90.95129554,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS2881-H0X,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+560,CRMS2881-M01,louisiana,29.47249702,-91.01251953,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS2881-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+561,CRMS2881-M100,louisiana,29.47252966,-91.01228818,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS2881-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+562,CRMS2887-H01,louisiana,29.52121427,-90.91537778,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS2887-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+563,CRMS2887-M01,louisiana,29.52088687,-90.91506796,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS2887-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+564,CRMS2887-M100,louisiana,29.52095385,-90.91516845,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS2887-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+565,CRMS2939-H01,louisiana,29.59458828,-90.57241983,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS2939-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+566,CRMS2939-M01,louisiana,29.59761753,-90.57508871,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS2939-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+567,CRMS2939-M100,louisiana,29.59764515,-90.57511901,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS2939-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+568,CRMS2939-W01,louisiana,29.5975918,-90.57516158,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS2939-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+569,CRMS2991-M01,louisiana,29.6368571,-90.44580818,"['203', '244', '509']","['206L', '103L', '207R']","['103F', '052F', '104F']",CRMS2991-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+570,CRMS2991-M100,louisiana,29.63692843,-90.44576508,"['203', '244', '509']","['206L', '103L', '207R']","['103F', '052F', '104F']",CRMS2991-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+571,CRMS2991-W01,louisiana,29.63690198,-90.44578247,"['203', '244', '509']","['206L', '103L', '207R']","['103F', '052F', '104F']",CRMS2991-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+572,CRMS3054-H01,louisiana,29.7219051,-90.35783517,"['203', '244', '509']","['206L', '102L', '207R']","['103F', '051F', '104F']",CRMS3054-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+573,CRMS3136-H01,louisiana,29.9495399,-90.63868403,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS3136-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+574,CRMS3166-H01,louisiana,29.85889667,-90.28904857,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS3166-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+575,CRMS3166-M01,louisiana,29.8586136,-90.28849459,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS3166-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+576,CRMS3166-M100,louisiana,29.85856832,-90.28848546,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS3166-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+577,CRMS3169-H01,louisiana,29.88893492,-90.27182498,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS3169-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+578,CRMS3169-M01,louisiana,29.88890546,-90.27206541,"['203', '244']","['207L', '102L']","['104F', '051F']",CRMS3169-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+579,CRMS3296-H01,louisiana,29.38404429,-90.47900942,"['203', '244', '509']","['206L', '103R', '206R']","['103F', '052F', '103F']",CRMS3296-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+580,CRMS3296-W01,louisiana,29.38984685,-90.4791647,"['203', '244', '509']","['206L', '103R', '206R']","['103F', '052F', '103F']",CRMS3296-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+581,CRMS3565-H01,louisiana,29.49723896,-90.09955612,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS3565-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+582,CRMS3565-W01,louisiana,29.49880888,-90.10221232,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS3565-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+583,CRMS3590-H01,louisiana,29.48391532,-89.94993916,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS3590-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+584,CRMS3601-H01,louisiana,29.57419215,-89.94757961,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS3601-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+585,CRMS3617-H01,louisiana,29.54706416,-89.91436467,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS3617-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+586,CRMS3626-H01,louisiana,30.10783263,-89.85408003,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS3626-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+587,CRMS3639-H01,louisiana,29.9046209,-89.85151476,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS3639-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+588,CRMS3641-H01,louisiana,29.91844864,-89.85514768,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS3641-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+589,CRMS3650-H01,louisiana,30.05654212,-89.82312632,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS3650-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+590,CRMS3664-H01,louisiana,29.91251375,-89.82599531,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS3664-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+591,CRMS3667-H01,louisiana,30.25838337,-89.88453417,"['203', '522']","['207L', '101R']","['104F', '051F']",CRMS3667-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+592,CRMS3667-H02,louisiana,30.26251433,-89.88466581,"['203', '522']","['207L', '101R']","['104F', '051F']",CRMS3667-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+593,CRMS3680-H01,louisiana,29.51149075,-89.79215932,"['203', '244', '522']","['206R', '103L', '103R']","['103F', '052F', '052F']",CRMS3680-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+594,CRMS3784-H01,louisiana,30.15728378,-89.66510018,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS3784-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+595,CRMS3800-H01,louisiana,29.84061664,-89.66765174,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS3800-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+596,CRMS3913-H01,louisiana,30.1655064,-90.47824412,"['244', '509']","['102L', '207R']","['051F', '104F']",CRMS3913-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+597,CRMS3985-H01,louisiana,29.71820084,-90.14981724,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS3985-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+598,CRMS4014-H01,louisiana,29.54856974,-91.32302289,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS4014-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+599,CRMS4016-H01,louisiana,29.56284315,-91.38569669,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS4016-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+600,CRMS4045-H01,louisiana,29.38002132,-91.01029952,"['244', '509', '550']","['103R', '206R', '103L']","['052F', '103F', '052F']",CRMS4045-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+601,CRMS4094-H01,louisiana,30.38959897,-90.15074677,"['203', '244']","['208L', '101L']","['104F', '051F']",CRMS4094-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+602,CRMS4103-H01,louisiana,29.6577383,-90.03873364,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS4103-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+603,CRMS4107-H01,louisiana,30.05422921,-89.85228393,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS4107-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+604,CRMS4110-H01,louisiana,30.20190848,-89.66665015,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS4110-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+605,CRMS4218-H01,louisiana,29.5634453,-90.16482365,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS4218-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+606,CRMS4245-H01,louisiana,29.67281063,-90.13434902,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS4245-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+607,CRMS4245-M01,louisiana,29.67196752,-90.13554958,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS4245-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+608,CRMS4245-M100,louisiana,29.67194904,-90.13552945,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS4245-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+609,CRMS4355-H01,louisiana,29.84134335,-89.82338728,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS4355-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+610,CRMS4355-M01,louisiana,29.84036711,-89.82398779,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS4355-M01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+611,CRMS4355-M100,louisiana,29.84028676,-89.82402137,"['203', '522']","['207L', '102R']","['104F', '051F']",CRMS4355-M100,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+612,CRMS4406-H01,louisiana,30.20271507,-89.72723948,"['203', '522']","['207L', '101R']","['104F', '051F']",CRMS4406-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+613,CRMS4407-H01,louisiana,30.22244895,-89.73117974,"['203', '522']","['207L', '101R']","['104F', '051F']",CRMS4407-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+614,CRMS4448-H01,louisiana,29.21352078,-89.23348398,"['203', '481', '522']","['206R', '205L', '103R']","['103F', '103F', '052F']",CRMS4448-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+615,CRMS4455-H01,louisiana,29.25890107,-90.94726056,"['244', '509']","['103R', '206R']","['052F', '103F']",CRMS4455-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+616,CRMS4529-H01,louisiana,29.47060936,-89.8216291,"['203', '244', '522']","['206R', '103L', '103R']","['103F', '052F', '052F']",CRMS4529-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+617,CRMS4548-H01,louisiana,29.86132208,-89.66829914,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS4548-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+618,CRMS4548-H02,louisiana,29.86210747,-89.67109498,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS4548-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+619,CRMS4551-H01,louisiana,29.85278428,-89.6037297,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS4551-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+620,CRMS4557-H01,louisiana,29.82412106,-89.57311062,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS4557-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+621,CRMS4572-H01,louisiana,30.05705692,-89.48127303,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS4572-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+622,CRMS4596-H01,louisiana,30.05573433,-89.45148833,"['203', '522']","['207R', '102R']","['104F', '051F']",CRMS4596-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+623,CRMS4626-H01,louisiana,29.33742446,-89.19776831,"['203', '481', '522']","['206R', '206L', '103R']","['103F', '103F', '052F']",CRMS4626-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+624,CRMS4690-H01,louisiana,29.49854623,-90.03955417,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS4690-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+625,CRMS4779-H01,louisiana,29.64139431,-91.4476026,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS4779-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+626,CRMS4782-H01,louisiana,29.66480509,-91.44237877,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS4782-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+627,CRMS4808-H01,louisiana,29.63541338,-91.4154532,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS4808-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+628,CRMS4809-H01,louisiana,29.64497275,-91.42100838,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS4809-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+629,CRMS4809-W01,louisiana,29.64858697,-91.41867098,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS4809-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+630,CRMS4900-H01,louisiana,29.63488388,-91.25918579,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS4900-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+631,CRMS4938-H01,louisiana,29.6158138,-91.32386066,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS4938-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+632,CRMS5003-H01,louisiana,29.6240861,-91.28919735,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS5003-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+633,CRMS5035-H01,louisiana,29.62448721,-91.03682339,"['244', '509', '550']","['102R', '206L', '103L']","['051F', '103F', '052F']",CRMS5035-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+634,CRMS5116-W01,louisiana,29.97345545,-90.91168627,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS5116-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+635,CRMS5167-H01,louisiana,30.14324684,-90.77851903,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS5167-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+636,CRMS5255-H01,louisiana,30.1928562,-90.60126425,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS5255-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+637,CRMS5267-H01,louisiana,30.29981692,-90.60223395,"['244', '509']","['101L', '208R']","['051F', '104F']",CRMS5267-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+638,CRMS5373-H01,louisiana,30.10149297,-90.6317394,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS5373-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+639,CRMS5414-H01,louisiana,30.1583258,-90.6338386,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS5414-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+640,CRMS5452-H01,louisiana,30.36991634,-90.53034223,"['244', '509']","['101L', '208R']","['051F', '104F']",CRMS5452-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+641,CRMS5536-H01,louisiana,29.97044998,-91.12984069,"['244', '509', '550']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS5536-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+642,CRMS5536-W01,louisiana,29.97048415,-91.13025006,"['244', '509', '550']","['102R', '207L', '102L']","['051F', '104F', '051F']",CRMS5536-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+643,CRMS5672-W01,louisiana,29.86869704,-90.84643213,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS5672-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+644,CRMS5770-W01,louisiana,29.75823906,-90.90501834,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS5770-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+645,CRMS5845-H01,louisiana,30.18341693,-90.68334492,"['244', '509']","['102R', '207R']","['051F', '104F']",CRMS5845-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+646,CRMS5858-H01,louisiana,30.31839386,-90.68378474,"['244', '509']","['101R', '208R']","['051F', '104F']",CRMS5858-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+647,CRMS5992-H01,louisiana,29.77585717,-91.54103097,"['509', '550']","['206L', '102L']","['103F', '051F']",CRMS5992-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+648,CRMS6008-H01,louisiana,29.6306356,-91.48050183,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS6008-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+649,CRMS6038-H01,louisiana,29.60478115,-91.35256577,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS6038-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+650,CRMS6042-H01,louisiana,29.63689902,-91.35449466,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS6042-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+651,CRMS6042-W01,louisiana,29.63780375,-91.35268294,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS6042-W01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+652,CRMS6088-H01,louisiana,30.31529645,-89.6580354,"['203', '522']","['208L', '101R']","['104F', '051F']",CRMS6088-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+653,CRMS6090-H01,louisiana,30.32546031,-89.66206512,"['203', '522']","['208L', '101R']","['104F', '051F']",CRMS6090-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+654,CRMS6209-H01,louisiana,30.37608965,-90.25887949,"['203', '244', '509']","['208L', '101L', '208R']","['104F', '051F', '104F']",CRMS6209-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+655,CRMS6299-H01,louisiana,30.04810463,-90.3507655,"['203', '244', '509']","['207L', '102L', '207R']","['104F', '051F', '104F']",CRMS6299-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+656,CRMS6301-H01,louisiana,29.96389972,-93.41097628,"['272', '537']","['102R', '207R']","['051F', '104F']",CRMS6301-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+657,CRMS6302-H01,louisiana,30.04168936,-93.42910984,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS6302-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+658,CRMS6302-H02,louisiana,30.02997165,-93.42958553,"['272', '537']","['102R', '207L']","['051F', '104F']",CRMS6302-H02,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+659,CRMS6303-H01,louisiana,29.47649355,-90.19061686,"['203', '244']","['206L', '103L']","['103F', '052F']",CRMS6303-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+660,CRMS6304-H01,louisiana,29.42041762,-91.27865776,"['509', '550']","['206L', '103L']","['103F', '052F']",CRMS6304-H01,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+661,11303500,sf,37.67601249,-121.2662907,"['274', '289']","['088R', '221L']","['044F', '111F']",11303500,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+662,11304810,sf,37.93547987,-121.3302245,"['274', '289']","['088R', '221L']","['044F', '111F']",11304810,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+663,11311300,sf,37.9925,-121.4538889,"['274', '289', '580']","['088R', '221L', '088L']","['044F', '111F', '044F']",11311300,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+664,11312672,sf,37.8708333,-121.53,"['011', '274', '289', '580']","['221R', '088R', '221L', '088L']","['111F', '044F', '111F', '044F']",11312672,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+665,11312676,sf,37.94226944,-121.5337,"['011', '274', '289', '580']","['221R', '088R', '221L', '088L']","['111F', '044F', '111F', '044F']",11312676,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+666,11312685,sf,38.00305556,-121.5108333,"['011', '274', '289', '580']","['221R', '088R', '221L', '088L']","['111F', '044F', '111F', '044F']",11312685,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+667,11312968,sf,37.81048298,-121.5424488,"['274', '289', '580']","['088R', '221L', '088L']","['044F', '111F', '044F']",11312968,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+668,11313240,sf,37.82,-121.5447222,"['011', '274', '289', '580']","['221R', '088R', '221L', '088L']","['111F', '044F', '111F', '044F']",11313240,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+669,11313315,sf,37.89103627,-121.5702283,"['011', '274', '289', '580']","['221R', '088R', '221L', '088L']","['111F', '044F', '111F', '044F']",11313315,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+670,11313405,sf,37.96992306,-121.572174,"['011', '274', '289', '580']","['221R', '088R', '221L', '088L']","['111F', '044F', '111F', '044F']",11313405,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+671,11313431,sf,38.01638889,-121.5819444,"['011', '274', '289', '580']","['221R', '088R', '221L', '088L']","['111F', '044F', '111F', '044F']",11313431,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+672,11313433,sf,38.0135326,-121.667731,"['011', '289', '580']","['221R', '221L', '088L']","['111F', '111F', '044F']",11313433,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+673,11313434,sf,38.0272222,-121.5644444,"['011', '274', '289', '580']","['221R', '088R', '221L', '088L']","['111F', '044F', '111F', '044F']",11313434,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+674,11313440,sf,38.0558333,-121.6669444,"['011', '289', '580']","['221R', '221L', '088L']","['111F', '111F', '044F']",11313440,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+675,11313452,sf,38.0711111,-121.5788889,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11313452,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+676,11313460,sf,38.05944444,-121.5572222,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11313460,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+677,11336600,sf,38.2447222,-121.5052778,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11336600,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+678,11336680,sf,38.22555556,-121.491111,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11336680,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+679,11336685,sf,38.2233333,-121.5072222,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11336685,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+680,11336790,sf,38.09638889,-121.496111,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11336790,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+681,11336930,sf,38.10851944,-121.5772194,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11336930,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+682,11336955,sf,38.10065278,-121.602686,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11336955,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+683,11337080,sf,38.1033333,-121.686111,"['011', '289', '580']","['222R', '221L', '088L']","['111F', '111F', '044F']",11337080,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+684,11337190,sf,38.0521424,-121.6888428,"['011', '289', '580']","['221R', '221L', '088L']","['111F', '111F', '044F']",11337190,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+685,11447650,sf,38.45566389,-121.5016167,"['011', '274', '289']","['222R', '087R', '222L']","['111F', '044F', '111F']",11447650,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+686,11447830,sf,38.32916667,-121.5791667,"['011', '274', '289', '580']","['222R', '087R', '222L', '087L']","['111F', '044F', '111F', '044F']",11447830,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+687,11447850,sf,38.2847222,-121.5866667,"['011', '274', '289', '580']","['222R', '087R', '222L', '087L']","['111F', '044F', '111F', '044F']",11447850,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+688,11447890,sf,38.25769218,-121.5182865,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11447890,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+689,11447903,sf,38.2372222,-121.5175,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11447903,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+690,11447905,sf,38.23880385,-121.5227309,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11447905,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+691,11452800,sf,38.68265687,-121.6729821,"['011', '274', '580']","['223R', '086R', '087L']","['112F', '043F', '044F']",11452800,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+692,11452900,sf,38.67851526,-121.6727386,"['011', '274', '580']","['223R', '086R', '087L']","['112F', '043F', '044F']",11452900,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+693,11453000,sf,38.6776572,-121.6440924,"['011', '274', '580']","['223R', '086R', '087L']","['112F', '043F', '044F']",11453000,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+694,11455095,sf,38.47686944,-121.5836417,"['011', '274', '289', '580']","['222R', '087R', '222L', '087L']","['111F', '044F', '111F', '044F']",11455095,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+695,11455140,sf,38.34916667,-121.6447222,"['011', '274', '289', '580']","['222R', '087R', '222L', '087L']","['111F', '044F', '111F', '044F']",11455140,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+696,11455276,sf,38.3078583,-121.6924278,"['011', '274', '580']","['222R', '087R', '087L']","['111F', '044F', '044F']",11455276,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+697,11455315,sf,38.2430111,-121.684286,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11455315,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+698,11455338,sf,38.23739167,-121.6739556,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11455338,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+699,11455340,sf,38.2333583,-121.675,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11455340,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+700,11455385,sf,38.19395556,-121.6580028,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",11455385,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+701,11455420,sf,38.14904444,-121.6889444,"['011', '289', '580']","['222R', '221L', '088L']","['111F', '111F', '044F']",11455420,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+702,11455485,sf,38.0778083,-121.767286,"['011', '580']","['221R', '088L']","['111F', '044F']",11455485,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+703,3.81E+14,sf,38.2408583,-121.515836,"['011', '274', '289', '580']","['222R', '087R', '221L', '088L']","['111F', '044F', '111F', '044F']",3.81E+14,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+704,3.82E+14,sf,38.3214833,-121.688111,"['011', '274', '580']","['222R', '087R', '087L']","['111F', '044F', '044F']",3.82E+14,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+705,3.84E+14,sf,38.6779347,-121.6749266,"['011', '011', '274', '274', '580', '580']","['223R', '223R', '086R', '086R', '087L', '087L']","['112F', '112F', '043F', '043F', '044F', '044F']",3.84E+14,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+706,3.84E+14,sf,38.6779346,-121.6852046,"['011', '011', '274', '274', '580', '580']","['223R', '223R', '086R', '086R', '087L', '087L']","['112F', '112F', '043F', '043F', '044F', '044F']",3.84E+14,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+707,9415020,sf,37.9961,-122.97669,"['011', '302', '317']","['221L', '088L', '221R']","['111F', '044F', '111F']",9415020,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+708,9415144,sf,38.0559,-122.0294,"['011', '580']","['221R', '088L']","['111F', '044F']",9415144,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+709,9415102,sf,38.03463,-122.12519,"['011', '580']","['221R', '088L']","['111F', '044F']",9415102,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+710,9414863,sf,37.92829,-122.4,"['011', '580']","['221L', '088R']","['111F', '044F']",9414863,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+711,9414290,sf,37.80669,-122.46499,"['011', '580']","['221L', '088R']","['111F', '044F']",9414290,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+712,9414750,sf,37.77166,-122.29833,"['011', '580']","['221R', '088R']","['111F', '044F']",9414750,'Adjusted Water Elevation to Datum (m),Date and Time UTC
+713,9414523,sf,37.50669,-122.20999,"['011', '580']","['220R', '089R']","['110F', '045F']",9414523,'Adjusted Water Elevation to Datum (m),Date and Time UTC

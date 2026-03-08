@@ -27,6 +27,9 @@ import xarray as xr
 import ast
 import sys
 
+
+
+
 ## Import custom packages 
 from swot_utils import (haversine, 
                         add_WSE_HRL2,
@@ -34,9 +37,10 @@ from swot_utils import (haversine,
                         convert_geoid_fromMeanTide_toTideFree,
                         )                            
 
+
 ##### Get command inputs
 parser=argparse.ArgumentParser(
-    description='''Script to download SWOT data using earthaccess ''')
+    description='''Script to extract SWOT HR data around a point ''')
 
 parser.add_argument('--interactive', dest='interactive',action="store_true",  help='if interactive is chosen, you will be prompted to enter information need for search')
 parser.add_argument('--aoi', dest='aoi', type=str, help='If not interactive, you must provide the AOI name')
@@ -65,7 +69,6 @@ except:
     bounding_LUT = pd.DataFrame([['default',np.nan,np.nan,np.nan,np.nan,10,15,-2,2,0,1]],columns=['aoi','minx','miny','maxx','maxy','minssh','maxssh','minwse','maxwse','mindac','maxdac'])
     aois = []
 
-    
 if args.interactive:
     aoi = input('which AOI: %s'%(aois))
     types = input('profiles or points? ')

@@ -136,7 +136,7 @@ Path(L2_folder).mkdir(parents=True, exist_ok=True)
 L2_fig_folder = L2_folder / 'plots'
 Path(L2_fig_folder).mkdir(parents=True, exist_ok=True)
 
-L2_output_folder = L2_folder / 'Extracted'
+L2_output_folder = L2_folder / 'Extracted' / aoi
 Path(L2_output_folder).mkdir(parents=True, exist_ok=True)
 
 tmp_folder = L2_folder / 'tmp'
