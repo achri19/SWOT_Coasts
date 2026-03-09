@@ -107,9 +107,9 @@ else:
 l2version = 'D' # 'C' ## Version C has shortname = 2.0, but filename = C
 l2hr_prefix = 'SWOT_L2_HR_Raster' 
 if l2version == 'C':
-    L2HR_folder = base_dir / 'Data' / (l2hr_prefix + '_2.0') / aoi
+    L2HR_folder = base_dir / 'Data' / (l2hr_prefix + '_2.0') 
 else:
-    L2HR_folder = base_dir / 'Data' / (l2hr_prefix + '_' + l2version) / aoi
+    L2HR_folder = base_dir / 'Data' / (l2hr_prefix + '_' + l2version)
 
 l2_processing = 'P*%s*' %(l2version) #Get all version C and use only the highest number
 resolution = '100m'
