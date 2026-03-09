@@ -217,7 +217,7 @@ for g in gs:
 
 
 
-        output1 = output_dir / ('%s_%s_%s_%skm_%s_%s.geojson' %(aoi,product,l2_processing,search_radius_hr,gauge_name,types))
+        output1 = output_dir / ('%s_%s_%s_%skm_%s_%s.geojson' %(aoi,product,l2_processing.replace('*','X'),search_radius_hr,gauge_name,types))
         if (os.path.isfile(output1)==False) :
             save_swot_df = {k: [] for k in variables_to_save + (['dist','unipix','avgtime','mode','cycle','pass_tile','file','avgtimestr','gauge','good'])}
     
