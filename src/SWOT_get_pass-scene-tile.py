@@ -25,7 +25,7 @@ from shapely.geometry import box
 import ast
 
 
-def scan_calval(points,name_id):
+def scan_calval(points,name_id,pass_estimate=None):
     ## Cal Val 1-day Repeat SWOT Orbit
     file = orbit_path / 'swot_beta_preval_coverage_20231204.kmz'
     if os.path.isfile(file)==False:
@@ -58,6 +58,10 @@ def scan_calval(points,name_id):
     
     
                 passs = points_within_tiles.iloc[i]['pass_num'].zfill(3)
+                if pass_estimate is not None:
+                    allowed_passes = {pass_id.replace('PASS_', '') for pass_id in pass_estimate}
+                    if passs not in allowed_passes:
+                        continue
                 print('Pass: %s' %(passs)) 
                 passes.append(passs)
                 tile = points_within_tiles.iloc[i]['tile_num'].zfill(3)+points_within_tiles.iloc[i]['tile_side']
@@ -93,7 +97,6 @@ def scan_science(points,name_id,pass_estimate=None):
         for layer in fiona.listlayers(kml_path):
             
             if (pass_estimate is not None and layer in pass_estimate) | (pass_estimate is None and layer[0]=='P'):
-                    print(layer)
                     polygon_gdf = gpd.read_file(kml_path, driver='KML', layer=layer)
                     points_within_polygons = gpd.sjoin(polygon_gdf,points , how='right', predicate='intersects')
                     points_within_polygons = points_within_polygons[~np.isnan(points_within_polygons['index_left'])]
@@ -144,6 +147,15 @@ def compile_all(calval,science,csv,name_id):
     
     return csv
 
+def has_pass_metadata(value):
+    if value is None or (isinstance(value, float) and pd.isna(value)):
+        return False
+    if isinstance(value, str):
+        try:
+            return bool(ast.literal_eval(value))
+        except (ValueError, SyntaxError):
+            return bool(value.strip())
+    return bool(value)
 
 base_dir = Path(os.path.realpath(__file__)).parent.parent
 orbit_path = base_dir / 'orbit_files' 
@@ -154,33 +166,62 @@ Path(orbit_path).mkdir(parents=True, exist_ok=True)
 aoi_template = pd.read_csv(base_dir / 'aoi_template.csv')
 aois = list(aoi_template['aoi'])
 aoi = input('\nwhich AOI (you must add AOI bounding box to the aoi_template.csv and individual point coordinates to point_template.csv. Leave the pass, scene, and tile columns blank): %s '%(aois))
-LUT =  aoi_template[aoi_template['aoi']==aoi].iloc[[0]]
-if pd.isna(LUT['pass']).all() | pd.isna(LUT['scene']).all() | pd.isna(LUT['tile']).all():
+LUT =  aoi_template[aoi_template['aoi']==aoi].reset_index(drop=True).iloc[0]
+if not all(has_pass_metadata(LUT[column]) for column in ['pass', 'scene', 'tile']):
     print('\nDetermine Pass, Scene, and Tile for %s' %(aoi))
-    points = gpd.GeoDataFrame({'aoi':LUT['aoi'],'geometry': box(minx=LUT["minx"], miny=LUT["miny"], maxx=LUT["maxx"], maxy=LUT["maxy"])}, crs="EPSG:4326")
+    points = gpd.GeoDataFrame(
+    [{
+        "aoi": LUT["aoi"],
+        "geometry": box(
+            minx=LUT["minx"],
+            miny=LUT["miny"],
+            maxx=LUT["maxx"],
+            maxy=LUT["maxy"],
+        ),
+    }],
+    crs="EPSG:4326",
+    )
     calval = scan_calval(points,'aoi')
     science = scan_science(points,'aoi')
-    final = compile_all(calval,science,LUT,'aoi')
+    final = compile_all(calval,science,LUT.to_frame().T,'aoi')
+    print(final)
     aoi_passes = ['PASS_%s' %(p) for p in final['pass'].iloc[0]]
-    aoi_template.loc[aoi_template['aoi'] == aoi] = final
+    aoi_template[['pass', 'scene', 'tile']] = aoi_template[
+        ['pass', 'scene', 'tile']
+    ].astype(object)
+    aoi_index = aoi_template.index[aoi_template['aoi'] == aoi][0]
+    for column in ['pass', 'scene', 'tile']:
+        aoi_template.at[aoi_index, column] = final.iloc[0][column]
     aoi_template.to_csv(base_dir / 'aoi_template.csv',index=False)
 else:
     print('\n%s Pass, Scene, Tile already determined - check aoi_template.csv' %(aoi))
-    aoi_passes = ['PASS_%s' %(p) for p in ast.literal_eval(LUT['pass'][0])]
+    aoi_passes = ['PASS_%s' %(p) for p in ast.literal_eval(LUT['pass'])]
     print('Passes: ',aoi_passes)
 
 point_template = pd.read_csv(base_dir / 'point_template.csv')
 LUT =  point_template[point_template['aoi']==aoi]
-if pd.isna(LUT['pass']).all() | pd.isna(LUT['scene']).all() | pd.isna(LUT['tile']).all():
-    print('\n\nDetermine Pass, Scene, and Tile for %s' %(point_template['name'].values))
+print(LUT)
+if not all(
+    LUT[column].map(has_pass_metadata).all()
+    for column in ['pass', 'scene', 'tile']
+):
+    print('\n\nDetermine Pass, Scene, and Tile for %s' %(LUT['name'].values))
     points = gpd.GeoDataFrame({'name':LUT['name'],'geometry': gpd.points_from_xy(LUT['longitude'], LUT['latitude'])}, crs="EPSG:4326")
-    calval = scan_calval(points,'name')
+    calval = scan_calval(points,'name',aoi_passes)
     science = scan_science(points,'name',aoi_passes)
-    final = compile_all(calval,science,point_template,'name')
+    final = compile_all(calval,science,LUT,'name')
     for pt in np.unique(final['name']):
-        point_template.loc[point_template['name'] == pt] = final[final['name']==pt]
+        point_template[['pass', 'scene', 'tile']] = point_template[
+            ['pass', 'scene', 'tile']
+        ].astype(object)
+        point_index = point_template.index[point_template['name'] == pt][0]
+        point_row = final[final['name'] == pt].iloc[0]
+        if any(point_row[column] for column in ['pass', 'scene', 'tile']):
+            for column in ['pass', 'scene', 'tile']:
+                point_template.at[point_index, column] = point_row[column]
     point_template.to_csv(str(base_dir / 'point_template.csv'),index=False)
 else:
     print('\n\nAll points Pass, Scene, Tile already determined - check point_template.csv')
+
 
 
