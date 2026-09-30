@@ -6,7 +6,7 @@ Created on Wed Oct  4 08:04:53 2023
 @author: alchrist
 """
 
-## If you just want to download files, this script will do that.
+## If you want to download files, this script will do that.
 ## Earth Data Login credentials are required
 ## If your AOI is not one already programmed, you'll need to define a bounding box
 ## Template file is stored in the repo root directory: aoi_template.csv
@@ -14,12 +14,19 @@ Created on Wed Oct  4 08:04:53 2023
 import os
 from pathlib import Path
 import argparse
+import ast
 import earthaccess
 import pandas as pd
 import sys
 import paramiko
 import getpass
 import fnmatch
+import re
+import shutil
+import tempfile
+import zipfile
+import geopandas as gpd
+from shapely.geometry import box
 
 #############################################################################
 #############################################################################
@@ -28,8 +35,115 @@ import fnmatch
 base_dir = Path(os.path.realpath(__file__)).parent.parent
 
 
-bounding_LUT = pd.read_csv(base_dir / 'aoi_template.csv')
+bounding_LUT = pd.read_csv(base_dir /'aoi_template.csv')
 aois = list(bounding_LUT['aoi'])
+
+
+def crop_lake_sp_archives(version_folder, selected_aoi, area):
+    """Crop matching Lake SP shapefiles and remove processed source files."""
+    aoi_rows = bounding_LUT[bounding_LUT['aoi'] == selected_aoi]
+    if aoi_rows.empty:
+        print('No AOI metadata found for %s; leaving Lake SP archives untouched.' % selected_aoi)
+        return
+
+    record = aoi_rows.iloc[0]
+    lake_value = record.get('lake')
+    lake_names = [] if pd.isna(lake_value) else [
+        name.strip() for name in re.split(r'[;,]', str(lake_value)) if name.strip()
+    ]
+    if not lake_names:
+        print('No lake names found for %s; leaving Lake SP archives untouched.' % selected_aoi)
+        return
+    tokens = set()
+    for column in ['pass', 'scene', 'tile']:
+        value = record.get(column)
+        if isinstance(value, str):
+            try:
+                values = ast.literal_eval(value)
+            except (ValueError, SyntaxError):
+                values = []
+            tokens.update(str(item).replace('PASS_', '') for item in values)
+
+    if not tokens:
+        print('No pass/scene/tile metadata for %s; leaving Lake SP archives untouched.' % selected_aoi)
+        return
+
+    def archive_matches(path):
+        name = path.stem
+        return any(re.search(r'(?<![A-Za-z0-9])%s(?![A-Za-z0-9])' % re.escape(token), name)
+                   for token in tokens)
+
+    archives = [path for path in version_folder.rglob('*.zip') if archive_matches(path)]
+    if not archives:
+        print('No matching Lake SP ZIP archives found for %s.' % selected_aoi)
+        return
+
+    crop_box = gpd.GeoDataFrame(
+        geometry=[box(area[0], area[1], area[2], area[3])],
+        crs='EPSG:4326',
+    )
+    sidecar_suffixes = ['.shp', '.shx', '.dbf', '.prj', '.cpg', '.qix', '.fix']
+
+    for archive in archives:
+        extracted = False
+        with tempfile.TemporaryDirectory(prefix='lake_sp_') as temp_dir:
+            with zipfile.ZipFile(archive) as zip_file:
+                zip_file.extractall(temp_dir)
+            shapefiles = list(Path(temp_dir).rglob('*.shp'))
+            if not shapefiles:
+                print('No shapefile in %s; leaving archive untouched.' % archive.name)
+                continue
+
+            for source_shp in shapefiles:
+                relative_stem = source_shp.relative_to(temp_dir).with_suffix('')
+                output_stem = version_folder / relative_stem
+                output_stem.parent.mkdir(parents=True, exist_ok=True)
+                source_gdf = gpd.read_file(source_shp)
+                lake_columns = {
+                    column.lower(): column for column in source_gdf.columns
+                }
+                lake_column = lake_columns.get('lake_name')
+                if lake_column is None:
+                    print('No lake_name field in %s; leaving archive untouched.' % archive.name)
+                    extracted = False
+                    break
+                lake_pattern = '|'.join(re.escape(name) for name in lake_names)
+                source_gdf = source_gdf[
+                    source_gdf[lake_column].astype('string').str.contains(
+                        lake_pattern, case=False, na=False, regex=True
+                    )
+                ]
+                if source_gdf.crs is None:
+                    source_gdf = source_gdf.set_crs('EPSG:4326')
+                crop_geometry = crop_box.to_crs(source_gdf.crs)
+                cropped = gpd.clip(source_gdf, crop_geometry)
+
+                with tempfile.TemporaryDirectory(prefix='lake_sp_output_') as output_dir:
+                    output_shp = Path(output_dir) / source_shp.name
+                    schema = gpd.io.file.infer_schema(cropped)
+                    for field, field_type in schema['properties'].items():
+                        if field_type.startswith('float'):
+                            schema['properties'][field] = 'float:24.6'
+                        elif field_type.startswith('int'):
+                            schema['properties'][field] = 'int:18'
+                    cropped.to_file(
+                        output_shp,
+                        driver='ESRI Shapefile',
+                        engine='fiona',
+                        schema=schema,
+                    )
+                    for suffix in sidecar_suffixes:
+                        original = output_stem.with_suffix(suffix)
+                        if original.exists():
+                            original.unlink()
+                    for generated in Path(output_dir).glob('%s.*' % output_shp.stem):
+                        shutil.move(str(generated), str(output_stem.with_suffix(generated.suffix)))
+                extracted = True
+                print('Cropped %s to %s features.' % (source_shp.name, len(cropped)))
+
+        if extracted:
+            archive.unlink()
+            print('Deleted processed archive %s.' % archive.name)
 
 
 #############################################################################
@@ -59,7 +173,7 @@ if args.interactive:
 
     if version == 'C':
         version = '2.0'
-    products = {0:'SWOT_L2_HR_PIXC',1:'SWOT_L2_HR_Raster',2:'SWOT_L2_HR_RiverSP',3:'SWOT_L2_HR_LakeSP',4:'SWOT_L2_HR_PIXCVec',5:'SWOT_L2_LR_SSH'}
+    products = {0:'SWOT_L2_HR_PIXC',1:'SWOT_L2_HR_Raster',2:'SWOT_L2_HR_RiverSP',3:'SWOT_L2_HR_LakeSP',5:'SWOT_L2_LR_SSH'}
     short_name = products[int(input(f"Which product:\n{products}"))] + '_' + version
     L3 = 'n'
     if 'SWOT_L2_LR_SSH' in short_name:
@@ -69,6 +183,8 @@ if args.interactive:
         L3 = input('Do you want to download L3 v2.0.1 products from AVISO (username/password required)? y/n')
     else:
         mode = 'HR'
+        if 'Raster' in short_name:
+            processing = '100m*' + processing
     ## Get bounding areas and search dates
     if aoi not in aois:
         print('what bounding box (lat/lon in decimal degrees)')
@@ -114,10 +230,18 @@ results = earthaccess.search_data(short_name = short_name,
                                   granule_name= '*%s*' %(processing))
 if mode == 'LR':
     results = [i for i in results if i['umm']['GranuleUR'].split('_')[4] in ['Expert','Unsmoothed']]
+if 'SWOT_L2_HR_LakeSP' in short_name:
+    results = [
+        i for i in results
+        if '_Obs_' in i['umm']['GranuleUR'].split('/')[-1]
+    ]
+    print('Lake SP Obs granules selected: ', len(results))
     
 if len(results)>0:
     print('Number of Matching Results = ', len(results))
     earthaccess.download(results[:], version_folder,show_progress=True)
+    if 'SWOT_L2_HR_LakeSP' in short_name:
+        crop_lake_sp_archives(version_folder, aoi, area)
     
     
 #############################################################################
