@@ -54,7 +54,7 @@ Guayes | -81.4	| -4.6	| -79.4	| -1.55301 | 20230101 | 20260101 |  |  |  |
 - It will build a reference grid that all Raster NC products will be resampled to in later steps.
 
    ```
-   python SWOT_build_ref_grid.py --interactive
+   python SWOT_build_reference_grid.py --interactive
    ```
    
 ## Extract SWOT data around a point
