@@ -117,6 +117,7 @@ def scan_science(points,name_id,pass_estimate=None):
         return science
     
 def compile_all(calval,science,csv,name_id):
+    csv = csv.copy()
     scenes = []
     tiles = []
     passes = []
