@@ -1,4 +1,4 @@
-# *SWOT_Coasts*
+# SWOT_Coasts
 
 ### Several workflows to extract SWOT data for evaluation against in-situ data in coastal areas
 
@@ -21,8 +21,23 @@ Templates are provided and include a demo location (Amerada Pass in the Atchafal
 
 
 # Workflows
+## 1. Prepare your Area of Interest (AOI). 
+- Add your AOI to AOI_template.csv following the format of the examples
+- Leave the Pass, Scene, and Tile columns blank.
 
-## 1. Download SWOT data (uses earthaccess)
+aoi |	minx	| miny	| maxx	| maxy	| startdate	| enddate	| pass	| scene	| tile	| lake
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |
+Guayes | -81.4	| -4.6	| -79.4	| -1.55301 | 20230101 | 20260101 |  |  |  | 
+
+
+## 2. Get the Pass, Tile and Scene #s for your AOI:
+   ```
+   python SWOT_get_pass-scene-tile.py --interactive
+   ```
+
+   - The *aoi_template.csv* file will be read and you will be asked to choose which AOI you want to use. This will fill in the Pass, Scene, and Tile columns and update the *aoi_template.csv* file.
+     
+## 3. Download SWOT data (uses earthaccess)
    ```
    python SWOT_download_files.py --interactive
    ```
@@ -33,15 +48,15 @@ Templates are provided and include a demo location (Amerada Pass in the Atchafal
    
    - If you choose LR, you will be given the opportunity to download L3 LR products through AVISO (https://www.aviso.altimetry.fr/en/data/products/sea-surface-height-products/global/swot-l3-ocean-products.html), but you will need an account and this step will be time consuming.
 
-   
-## 2. Find track/frame information for a set of Lat/Lon coordinates
-   - Determine the SWOT pass, scene, and tiles that overlap your AOI: both the entire bounding box (given in aoi_template.csv) and indivudal points (point_template.csv). Determining the passes, scenes, and tiles reduces the processing time of later workflows.
-   - This workflow is time consuming, but only needs to be run for each AOI and list of points one time.
-   
-   ```
-   python SWOT_get-pass-scene-tile.py
-   ```
+## 4. Build a reference grid
+- This is needed if your AOI is large and covers more than one UTM zone.
+- The script will find the dominant UTM zone from all Raster NC files downloaded in Step #3.
+- It will build a reference grid that all Raster NC products will be resampled to in later steps.
 
+   ```
+   python SWOT_build_ref_grid.py --interactive
+   ```
+   
 ## Extract SWOT data around a point
 
 ### LR SSH Data
