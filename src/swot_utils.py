@@ -9,7 +9,6 @@ import xarray as xr
 import geopandas as gpd
 import pandas as pd
 from geopy import distance
-import math
 import netCDF4 as nc
 
 
@@ -146,7 +145,7 @@ def calculate_delh_MeantTide_minus_TideFree_geoidheights(ds):
     hperm = -0.31460
     k2 = 0.3 #(Love number, change in the gravitational potential caused by tidal deformation)
     ds['geoid_delh'] = (1+k2)*hperm*np.sqrt(5/(4*np.pi))*((3/2)*np.sin(ds['latitude'])**2-(1/2))
-    ds.geoid_delh.attrs['long_name'] = 'mean-tide - tide-free geoid height difference'
+    ds.geoid_delh.attrs['long_name'] = 'conversion between mean-tide and tide-free geoids'
     ds.geoid_delh.attrs['standard_name'] = 'del h '
     ds.geoid_delh.attrs['comment'] = 'SWOT Handbook, Section 11.3.1, Equation 11.4 and 11.5: delh is calculated as hmt - htf, equal to (1+k2)Hperm * sqrt(5/4pi)(1.5sin2(latdeg)-0.5) where k2 = %s and hperm = %s' %(k2, hperm)
     # print('\t\t%s' %(ds.geoid_delh.attrs['comment']))
@@ -183,17 +182,22 @@ def convert_geoid_fromMeanTide_toTideFree(ds,geoid_file):
         ## Pixel offset errors were also corrected in his geoid
         
         ## Use meantide_egm08 (must be a DataArray) to select nearest points
-        # ds['egm08_tidefree'] = geoid['geoid'].sel(lat=ds['latitude'],lon=ds['longitude'],method='nearest')
+        # ds['egm08_tidefreeMD'] = geoid['geoid'].sel(lat=ds['latitude'],lon=ds['longitude'],method='nearest')
         print('\n\t\tA tide-free geoid, %s, is provided as an ancillary nc file' %(geoid_file[0].split('/')[-1]))
-        ds['egm08_tidefree'] = (('num_lines','num_pixels'),interp_nc_geoid_at_coords(ds['longitude'],ds['latitude'],geoid_file[0]))
+        # ds['egm08_tidefree'] = (('num_lines','num_pixels'),interp_nc_geoid_at_coords(ds['longitude'],ds['latitude'],geoid_file[0]))
+        if 'num_lines' in ds.dims: 
+            ds['egm08_tidefreeMD'] = (('num_lines','num_pixels'),interp_nc_geoid_at_coords(ds['longitude'],ds['latitude'],geoid_file[0]))
+        else:
+            ds['egm08_tidefreeMD'] = (('y','x'),interp_nc_geoid_at_coords(ds['longitude'],ds['latitude'],geoid_file[0]))
     
     else:
         ## Must calculated tide-free geoid using the geoid values within the SWOT product
         print('\n\t\tThe tide-free geoid %s was not found, tide-free geoid heights will be calculated with the geoid included in the SWOT product')
-        ds['egm08_tidefree'] = ds['egm08_meantide'] - ds['geoid_delh']
+        ds['egm08_tidefreeMD'] = ds['geoid'] - ds['geoid_delh']
 
-    ds.egm08_tidefree.attrs = ds.egm08_meantide.attrs
-    ds.egm08_tidefree.attrs['comment'] = ds.egm08_meantide.attrs['comment'].replace('mean tide','tide free')
+    ds.egm08_tidefreeMD.attrs = ds.geoid.attrs
+    ds.egm08_tidefreeMD.attrs['long_name'] = 'geoid height tide free from Michael'
+    ds.egm08_tidefreeMD.attrs['comment'] = ds.geoid.attrs['comment'].replace('mean tide','tide free')
     return ds
 
 def add_permanent_tide(ds):
@@ -249,9 +253,10 @@ def add_WSE_HRL2(ds,wse_var,corrections):
         tmp = tmp  - ds[cor].values
         txt = txt + ' minus ' + cor
 
-    ds['wse_egm08'] = (('num_lines','num_pixels'),tmp)
+    # ds['wse_egm08'] = (('num_lines','num_pixels'),tmp)
+    ds['wse_egm08'] = (('y','x'),tmp)
     ds.wse_egm08.attrs = wse.attrs
-    ds.wse_egm08.attrs['long_name'] = 'water surface elevation'
+    ds.wse_egm08.attrs['long_name'] = 'water surface elevation above geoid %s' %(corrections[0])
     ds.wse_egm08.attrs['standard_name'] = 'water surface elevation: %s' %(txt)
     ds.wse_egm08.attrs['valid_min'] = wse.attrs['valid_min'] 
     ds.wse_egm08.attrs['valid_max'] = wse.attrs['valid_max'] 
@@ -342,23 +347,40 @@ def haversine(lat1, lon1, lat2, lon2):
         The distance between the two points in kilometers.
     """
     R = 6371  # Radius of the Earth in kilometers
-    lat1_rad = math.radians(lat1)
-    lon1_rad = math.radians(lon1)
-    lat2_rad = math.radians(lat2)
-    lon2_rad = math.radians(lon2)
+    lat1_rad = np.radians(lat1)
+    lon1_rad = np.radians(lon1)
+    lat2_rad = np.radians(lat2)
+    lon2_rad = np.radians(lon2)
     
     dlon = lon2_rad - lon1_rad
     dlat = lat2_rad - lat1_rad
-    a = math.sin(dlat / 2)**2 + math.cos(lat1_rad) * math.cos(lat2_rad) * math.sin(dlon / 2)**2
-    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+    a = np.sin(dlat / 2)**2 + np.cos(lat1_rad) * np.cos(lat2_rad) * np.sin(dlon / 2)**2
+    c = 2 * np.arctan2(np.sqrt(a), np.sqrt(1 - a))
     dist = R * c
     return dist
 
+
+def haversine_vectorized(lat1, lon1, lat2, lon2):
+    # lat2 and lon2 are pandas series/numpy arrays
+    R = 6371  # Earth radius in km
+    dlat = np.radians(lat2 - lat1)
+    dlon = np.radians(lon2 - lon1)
+    a = np.sin(dlat/2)**2 + np.cos(np.radians(lat1)) * np.cos(np.radians(lat2)) * np.sin(dlon/2)**2
+    c = 2 * np.arcsin(np.sqrt(a))
+    return R * c
+
 def fix_latlon(df):
-    if df['x'].iloc[0] > 180:
-        df['x2'] =df['x']-360
-    else:
-        df['x2'] =df['x']
+    """
+    Normalize longitude to -180 to 180 format consistently.
+    Creates 'x2' column with normalized longitude and 'geometry' column.
+
+    Previous behavior checked only first pixel, which caused inconsistent formats.
+    Now always normalizes any longitude > 180 to -180-180 range.
+    """
+    # Always normalize to -180 to 180 format for consistency
+    df['x2'] = np.where(df['x'] > 180, df['x'] - 360, df['x'])
+    # Create geometry with normalized longitude
+    df['geometry'] = gpd.points_from_xy(df['x2'], df['y'], crs='EPSG:4326')
     return df
 
 def savedf(df,folder,name):
