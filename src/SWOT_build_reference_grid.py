@@ -59,7 +59,7 @@ print(f"Base Directory: {base_dir}")
 ##############################################################################
 ## Get bounding information from CSV
 try:
-    bounding_LUT = pd.read_csv(base_dir / 'Data' / 'aoi_SWOT_all.csv')
+    bounding_LUT = pd.read_csv(base_dir / 'aoi_template.csv')
     aois = list(bounding_LUT['aoi'])
 except Exception:
     bounding_LUT = pd.DataFrame([['default', np.nan, np.nan, np.nan, np.nan, 10, 15, -2, 2, 0, 1]], 
@@ -278,7 +278,7 @@ master_grid.rio.write_transform(inplace=True)
 
 ##############################################################################
 ## Save Output to AOI_referencegrid.nc
-output_filename = f"{aoi}_referencegrid.nc"
+output_filename = f"{aoi}_reference_grid.nc"
 output_grid_path = aoi_dir / output_filename
 
 master_grid.to_netcdf(output_grid_path)
