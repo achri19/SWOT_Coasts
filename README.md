@@ -51,13 +51,30 @@ Guayes | -81.4	| -4.6	| -79.4	| -1.55301 | 20230101 | 20260101 |  |  |  |
 ## 4. Build a reference grid
 - This is needed if your AOI is large and covers more than one UTM zone.
 - The script will find the dominant UTM zone from all Raster NC files downloaded in Step #3.
-- It will build a reference grid that all Raster NC products will be resampled to in later steps.
+- It will build a reference grid that all Raster products will be resampled to in later steps.
 
    ```
    python SWOT_build_reference_grid.py --interactive
    ```
-   
-## Extract SWOT data around a point
+
+## 5. Process HR Raster products over AOI
+- This will process all of the available L2 HR Raster .nc files that cover your site.
+- Mosaics, clips, and resamples all products in one cycle into one file
+- Converts mean-tide geoid heights to the tide-free EGM2008 system and calculates orthometric water surface elevation (wse_egm08).
+- Generates analysis-ready NetCDF scenes in <AOI>/Extracted/ alongside validation quicklook plots for backscatter (sig0) and water elevation (wse_egm08).  
+   ```
+   python SWOT_L2_HR_Raster_ProcessbyAOI.py --interactive
+   ```
+
+
+
+
+
+
+
+
+
+## Ongoing Work SWOT data around a point
 
 ### LR SSH Data
    - Once data are downloaded, we can pre-process the LR files to apply corrections, calculate water surface elevation, filter pixels. This script will produce a new file type (geojson), which will be used in subsequent workflos
