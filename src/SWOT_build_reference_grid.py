@@ -278,7 +278,7 @@ master_grid.rio.write_transform(inplace=True)
 
 ##############################################################################
 ## Save Output to AOI_referencegrid.nc
-output_filename = f"{aoi}_reference_grid.nc"
+output_filename = f"{aoi}_referencegrid.nc"
 output_grid_path = aoi_dir / output_filename
 
 master_grid.to_netcdf(output_grid_path)
